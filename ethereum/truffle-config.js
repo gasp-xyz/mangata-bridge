@@ -20,7 +20,17 @@ module.exports = {
         "https://ropsten.infura.io/v3/".concat(process.env.INFURA_PROJECT_ID)
       ),
       network_id: 3,
-      gas: 6000000
+      gas: 6000000,
+      gasPrice: 55000000000
+    },
+    kovan: {
+      provider: () => new HDWalletProvider(
+          process.env.MNEMONIC,
+          "https://kovan.infura.io/v3/".concat(process.env.INFURA_PROJECT_ID)
+      ),
+      network_id: 42,
+      gas: 6000000,
+      gasPrice: 55000000000
     }
   },
   mocha: {

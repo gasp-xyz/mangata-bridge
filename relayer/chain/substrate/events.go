@@ -208,40 +208,45 @@ func (ed *EventDecoder) Decode(records []byte) ([]Event, error) {
 
 		key := [2]string{string(moduleName), string(eventName)}
 		holderType, ok := ed.Types[key]
-		if !ok {
-			return nil, fmt.Errorf("event #%v (%s.%s) is not decodable", i, moduleName, eventName)
+		if ok {
+
+            holder := reflect.New(holderType)
+    		numFields := holder.Elem().NumField()
+
+    		// Decode event fields
+    		for j := 0; j < numFields; j++ {
+    			err = decoder.Decode(holder.Elem().FieldByIndex([]int{j}).Addr().Interface())
+    			if err != nil {
+    				return nil, fmt.Errorf(
+    					"unable to decode field %v of event #%v with EventID %v, field %v_%v: %v", j, i, id, moduleName,
+    					eventName, err,
+    				)
+    			}
+    		}
+
+    		// Decode topics
+    		topics := []types.Hash{}
+    		err = decoder.Decode(&topics)
+    		if err == nil {
+    			event := Event{
+                    			ID:     [2]uint8{uint8(id[0]), uint8(id[1])},
+                    			Name:   [2]string{string(moduleName), string(eventName)},
+                    			Phase:  phase,
+                    			Topics: topics,
+                    			Fields: holder.Elem().Interface(),
+                    		}
+
+                    		events = append(events, event)
+    		} else {
+    		    log.Trace("unable to decode topics for event #%v: %v", i, err)
+    			//return nil, fmt.Errorf("unable to decode topics for event #%v: %v", i, err)
+    		}
+
+
+		} else {
+		    //return nil, fmt.Errorf("event #%v (%s.%s) is not decodable", i, moduleName, eventName)
+		    log.Trace("event #%v (%s.%s) is not decodable", i, moduleName, eventName)
 		}
-
-		holder := reflect.New(holderType)
-		numFields := holder.Elem().NumField()
-
-		// Decode event fields
-		for j := 0; j < numFields; j++ {
-			err = decoder.Decode(holder.Elem().FieldByIndex([]int{j}).Addr().Interface())
-			if err != nil {
-				return nil, fmt.Errorf(
-					"unable to decode field %v of event #%v with EventID %v, field %v_%v: %v", j, i, id, moduleName,
-					eventName, err,
-				)
-			}
-		}
-
-		// Decode topics
-		topics := []types.Hash{}
-		err = decoder.Decode(&topics)
-		if err != nil {
-			return nil, fmt.Errorf("unable to decode topics for event #%v: %v", i, err)
-		}
-
-		event := Event{
-			ID:     [2]uint8{uint8(id[0]), uint8(id[1])},
-			Name:   [2]string{string(moduleName), string(eventName)},
-			Phase:  phase,
-			Topics: topics,
-			Fields: holder.Elem().Interface(),
-		}
-
-		events = append(events, event)
 
 	}
 
