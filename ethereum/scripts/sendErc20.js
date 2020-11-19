@@ -14,7 +14,7 @@ module.exports = async () => {
       return
   }
 
-  const polkadotRecipient = process.argv[5].toString();
+  const polkadotRecipient = process.argv[6].toString();
   if (!polkadotRecipient) {
     console.log("Must provide a Polkadot recipient")
     return

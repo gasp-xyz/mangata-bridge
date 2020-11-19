@@ -84,6 +84,10 @@ func (wr *Writer) Write(ctx context.Context, msg *chain.Message) error {
 		"appAddress":    common.Address(msg.AppID).Hex(),
 	}).Info("Submitting message to Ethereum")
 
+	wr.log.WithFields(logrus.Fields{
+    		"senderAddress": wr.conn.kp.CommonAddress().Hex(),
+    	}).Debug("Address from")
+
 	nonce, err := wr.conn.client.PendingNonceAt(ctx, wr.conn.kp.CommonAddress())
 	if err != nil {
 		return err
