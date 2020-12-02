@@ -190,20 +190,26 @@ func (ed *EventDecoder) Decode(records []byte) ([]Event, error) {
 		phase := types.Phase{}
 		err := decoder.Decode(&phase)
 		if err != nil {
-			return nil, fmt.Errorf("unable to decode Phase for event #%v: %v", i, err)
+			//return nil, fmt.Errorf("unable to decode Phase for event #%v: %v", i, err)
+			log.Trace("unable to decode Phase for event #%v: %v", i, err)
+			continue
 		}
 
 		// Decode event ID
 		id := types.EventID{}
 		err = decoder.Decode(&id)
 		if err != nil {
-			return nil, fmt.Errorf("unable to decode EventID for event #%v: %v", i, err)
+			//return nil, fmt.Errorf("unable to decode EventID for event #%v: %v", i, err)
+			log.Trace("unable to decode EventID for event #%v: %v", i, err)
+			continue
 		}
 
 		// Ask metadata for method and event name
 		moduleName, eventName, err := ed.meta.FindEventNamesForEventID(id)
 		if err != nil {
-			return nil, fmt.Errorf("unable to find event with EventID %v in metadata for event #%v: %s", id, i, err)
+			//return nil, fmt.Errorf("unable to find event with EventID %v in metadata for event #%v: %s", id, i, err)
+			log.Trace("unable to find event with EventID %v in metadata for event #%v: %s", id, i, err)
+			continue
 		}
 
 		key := [2]string{string(moduleName), string(eventName)}
@@ -217,10 +223,15 @@ func (ed *EventDecoder) Decode(records []byte) ([]Event, error) {
     		for j := 0; j < numFields; j++ {
     			err = decoder.Decode(holder.Elem().FieldByIndex([]int{j}).Addr().Interface())
     			if err != nil {
-    				return nil, fmt.Errorf(
+    				//return nil, fmt.Errorf(
+    				//	"unable to decode field %v of event #%v with EventID %v, field %v_%v: %v", j, i, id, moduleName,
+    				//	eventName, err,
+    				//)
+    				log.Trace(
     					"unable to decode field %v of event #%v with EventID %v, field %v_%v: %v", j, i, id, moduleName,
     					eventName, err,
     				)
+    				continue
     			}
     		}
 
