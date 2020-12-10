@@ -3,3 +3,4 @@
 build/
 mage/
 start.sh
+relay-config.toml
