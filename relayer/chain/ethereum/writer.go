@@ -1,4 +1,5 @@
 // Copyright 2020 Snowfork
+// Copyright (C) 2020 Mangata team
 // SPDX-License-Identifier: LGPL-3.0-only
 
 package ethereum
