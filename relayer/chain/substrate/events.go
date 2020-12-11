@@ -1,3 +1,7 @@
+// Copyright (C) 2020 Mangata team
+// Based on Snowfork bridge implementation
+// SPDX-License-Identifier: LGPL-3.0-only
+
 package substrate
 
 import (

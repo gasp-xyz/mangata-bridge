@@ -1,4 +1,4 @@
-# Polkadot Ethereum Bridge
+# Snowfork Polkadot Ethereum Bridge modified for Mangata
 
 Components for a Polkadot Ethereum Bridge
 
@@ -12,9 +12,7 @@ See [ethereum/README.md](ethereum/README.md)
 
 ### Parachain
 
-This folder includes our substrate parachain, as well as our bridge-specific pallets.
-
-See [parachain/README.md](parachain/README.md)
+Parachain folder is removed since the pallets are integrated into the Mangata node.
 
 ### Relayer
 
@@ -35,3 +33,5 @@ To test out and use the bridge, see each of the above READMEs in order and run t
 ## Security
 
 The security policy and procedures can be found in SECURITY.md.
+
+Current version is for testnet purposes only, security is not guaranteed.
