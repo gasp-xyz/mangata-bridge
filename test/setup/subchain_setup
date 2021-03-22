@@ -1,0 +1,12 @@
+// Replace in /mangata-node/primitives/core/src/registry.rs
+
+static APP_REGISTRY: &[Entry] = &[
+	Entry {
+		app: App::ETH,
+		id: [252, 151, 166, 25, 125, 201, 11, 239, 107, 190, 253, 103, 39, 66, 237, 117, 233, 118, 133, 83],
+	},
+	Entry {
+		app: App::ERC20,
+		id: [237, 163, 56, 228, 220, 70, 3, 132, 147, 184, 133, 50, 120, 66, 253, 62, 48, 28, 171, 57],
+	}
+];
