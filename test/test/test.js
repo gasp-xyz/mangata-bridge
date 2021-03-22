@@ -19,6 +19,7 @@ describe('Bridge', function () {
   const polkadotRecipientSS58 = "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY";
 
   const ETH_ASSET_ID = "0x00"
+	const TKN_ASSET_ID = "0x01"
 
   before(async function () {
 
@@ -54,66 +55,66 @@ describe('Bridge', function () {
       expect(beforeEthBalance.plus(beforeSubBalance)).to.be.bignumber.equal(afterEthBalance.plus(afterSubBalance).plus(gasCost))
     });
 
-    // it('should transfer ETH from Substrate to Ethereum', async function () {
-		//
-    //   let amount = BigNumber('10000000000000000'); // 0.01 ETH
-		//
-    //   let beforeEthBalance = await ethClient.getEthBalance(ethClient.accounts[1]);
-    //   let beforeSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, "0x00");
-		//
-    //   await subClient.burnETH(subClient.alice, ethClient.accounts[1], amount.toFixed())
-    //   await sleep(30000);
-		//
-    //   let afterEthBalance = await ethClient.getEthBalance(ethClient.accounts[1]);
-    //   let afterSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, "0x00");
-		//
-    //   expect(afterEthBalance.minus(beforeEthBalance)).to.be.bignumber.equal(amount);
-    //   expect(beforeSubBalance.minus(afterSubBalance)).to.be.bignumber.equal(amount);
-		//
-    //   // conservation of value
-    //   expect(beforeEthBalance.plus(beforeSubBalance)).to.be.bignumber.equal(afterEthBalance.plus(afterSubBalance))
-		//
-    // })
+    it('should transfer ETH from Substrate to Ethereum', async function () {
+
+      let amount = BigNumber('10000000000000000'); // 0.01 ETH
+
+      let beforeEthBalance = await ethClient.getEthBalance(ethClient.accounts[1]);
+      let beforeSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, ETH_ASSET_ID);
+
+      await subClient.burnETH(subClient.alice, ethClient.accounts[1], amount.toFixed())
+      await sleep(30000);
+
+      let afterEthBalance = await ethClient.getEthBalance(ethClient.accounts[1]);
+      let afterSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, ETH_ASSET_ID);
+
+      expect(afterEthBalance.minus(beforeEthBalance)).to.be.bignumber.equal(amount);
+      expect(beforeSubBalance.minus(afterSubBalance)).to.be.bignumber.equal(amount);
+
+      // conservation of value
+      expect(beforeEthBalance.plus(beforeSubBalance)).to.be.bignumber.equal(afterEthBalance.plus(afterSubBalance))
+
+    })
   });
 
-  // describe('ERC20 App', function () {
-  //   it('should transfer ERC20 tokens from Ethereum to Substrate', async function () {
-  //     let amount = BigNumber('1000');
-	//
-  //     let beforeEthBalance = await ethClient.getErc20Balance(ethClient.accounts[0], this.tokenAddress);
-  //     let beforeSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, this.tokenAddress);
-	//
-  //     await ethClient.approveERC20(ethClient.accounts[0], amount, this.tokenAddress);
-  //     await ethClient.sendERC20(ethClient.accounts[0], amount, this.tokenAddress, polkadotRecipient);
-  //     await sleep(10000);
-	//
-  //     let afterEthBalance = await ethClient.getErc20Balance(ethClient.accounts[0], this.tokenAddress);
-  //     let afterSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, this.tokenAddress);
-	//
-  //     expect(afterEthBalance).to.be.bignumber.equal(beforeEthBalance.minus(amount));
-  //     expect(afterSubBalance).to.be.bignumber.equal(beforeSubBalance.plus(amount));
-	//
-  //     // conservation of value
-  //     expect(beforeEthBalance.plus(beforeSubBalance)).to.be.bignumber.equal(afterEthBalance.plus(afterSubBalance))
-  //   });
-	//
-  //   it('should transfer ERC20 from Substrate to Ethereum', async function () {
-  //     let amount = BigNumber('1000');
-	//
-  //     let beforeEthBalance = await ethClient.getErc20Balance(ethClient.accounts[0], this.tokenAddress);
-  //     let beforeSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, this.tokenAddress);
-	//
-  //     await subClient.burnERC20(subClient.alice, this.tokenAddress, ethClient.accounts[0], amount.toFixed())
-  //     await sleep(30000);
-	//
-  //     let afterEthBalance = await ethClient.getErc20Balance(ethClient.accounts[0], this.tokenAddress);
-  //     let afterSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, this.tokenAddress);
-	//
-  //     expect(afterEthBalance.minus(beforeEthBalance)).to.be.bignumber.equal(amount);
-  //     expect(beforeSubBalance.minus(afterSubBalance)).to.be.bignumber.equal(amount);
-	//
-  //     // conservation of value
-  //     expect(beforeEthBalance.plus(beforeSubBalance)).to.be.bignumber.equal(afterEthBalance.plus(afterSubBalance))
-  //   })
-  // })
+  describe('ERC20 App', function () {
+    it('should transfer ERC20 tokens from Ethereum to Substrate', async function () {
+      let amount = BigNumber('1000');
+
+      let beforeEthBalance = await ethClient.getErc20Balance(ethClient.accounts[0], this.tokenAddress);
+      let beforeSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, TKN_ASSET_ID);
+
+      await ethClient.approveERC20(ethClient.accounts[0], amount, this.tokenAddress);
+      await ethClient.sendERC20(ethClient.accounts[0], amount, this.tokenAddress, polkadotRecipient);
+      await sleep(10000);
+
+      let afterEthBalance = await ethClient.getErc20Balance(ethClient.accounts[0], this.tokenAddress);
+      let afterSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, TKN_ASSET_ID);
+
+      expect(afterEthBalance).to.be.bignumber.equal(beforeEthBalance.minus(amount));
+      expect(afterSubBalance).to.be.bignumber.equal(beforeSubBalance.plus(amount));
+
+      // conservation of value
+      expect(beforeEthBalance.plus(beforeSubBalance)).to.be.bignumber.equal(afterEthBalance.plus(afterSubBalance))
+    });
+
+    it('should transfer ERC20 from Substrate to Ethereum', async function () {
+      let amount = BigNumber('1000');
+
+      let beforeEthBalance = await ethClient.getErc20Balance(ethClient.accounts[0], this.tokenAddress);
+      let beforeSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, TKN_ASSET_ID);
+
+      await subClient.burnERC20(subClient.alice, this.tokenAddress, ethClient.accounts[0], amount.toFixed())
+      await sleep(30000);
+
+      let afterEthBalance = await ethClient.getErc20Balance(ethClient.accounts[0], this.tokenAddress);
+      let afterSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, TKN_ASSET_ID);
+
+      expect(afterEthBalance.minus(beforeEthBalance)).to.be.bignumber.equal(amount);
+      expect(beforeSubBalance.minus(afterSubBalance)).to.be.bignumber.equal(amount);
+
+      // conservation of value
+      expect(beforeEthBalance.plus(beforeSubBalance)).to.be.bignumber.equal(afterEthBalance.plus(afterSubBalance))
+    })
+  })
 });
