@@ -22,19 +22,19 @@ services:
 
   # Parachain
   parachain:
-    image: paritytech/ci-linux:production
-    working_dir: /var/www/artemis-node
+    image: mangata/mangata-node:latest
+    working_dir: /var/docker/mangata-custom-node
     ports:
       - "9944:9944"
     environment:
-      - CARGO_HOME=/var/www/artemis-node/.cargo
+      - CARGO_HOME=/var/docker/mangata-custom-node/.cargo
     env_file: ./build/parachain.env
     volumes:
-      - ../parachain:/var/www/artemis-node
+      - ../../mangata-node/:/var/docker/mangata-custom-node
       - type: bind
         source: ./build/parachain-state/
         target: /root/.local
-    command: bash -c "cargo build --release && ./target/release/artemis-node --dev --ws-external"
+    command: bash -c "./target/release/mangata-node --dev --ws-external"
 
   # Relayer
   relayer:
@@ -55,4 +55,3 @@ services:
 
 volumes:
     ganache-db:
-

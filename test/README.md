@@ -32,7 +32,7 @@ mkdir build/parachain-state
 touch build/parachain.env
 
 # Start ganache service
-docker-compose up -d -- ganache
+docker-compose up -d ganache
 
 # Ensure ganache starts up successfully
 docker-compose logs ganache | tail -n 20
@@ -52,13 +52,13 @@ truffle exec scripts/dumpAddresses.js --network ganache
 popd
 
 # Start Parachain
-docker-compose up -d -- parachain
+docker-compose up -d parachain
 
 # Wait until parachain compiles and starts up successfully
 docker-compose logs parachain | tail -n 20
 
 # Start Relayer
-docker-compose up -d -- relayer
+docker-compose up -d relayer
 
 # Wait until relayer starts up successfully
 docker-compose logs relayer | tail -n 20
