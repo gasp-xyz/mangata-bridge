@@ -134,6 +134,20 @@ class SubClient {
         const txHash = await this.api.tx.erc20.burn(assetId, recipient, amount).signAndSend(account);
     }
 
+		async waitNewBlock() {
+	  let count = 0
+	  return new Promise(async (resolve) => {
+	    const unsubscribe = await this.api.rpc.chain.subscribeNewHeads((header) => {
+	      // console.log(`Chain is at block: #${header.number}`)
+
+	      if (++count === 2) {
+	        unsubscribe()
+	        resolve(true)
+	      }
+	    })
+	  })
+	}
+
 
 }
 
