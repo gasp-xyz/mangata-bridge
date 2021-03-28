@@ -24,6 +24,6 @@ module.exports = function(deployer, network, accounts) {
     // await deployer.deploy(Bridge, verifier.address, [ethApp.address, erc20App.address]);
 
     // Deploy TEST ERC20 token for testing
-    await deployer.deploy(MangataToken, 100000000, "Mangata Token", "MGT");
+    await deployer.deploy(MangataToken, "Mangata Token", "MNG", 2000000, accounts[1]);
   })
 };

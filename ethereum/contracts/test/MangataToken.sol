@@ -1,14 +1,18 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.2;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/presets/ERC20PresetFixedSupply.sol";
 
-contract MangataToken is ERC20 {
+contract MangataToken is ERC20PresetFixedSupply {
 
-    constructor(uint256 initialSupply, string memory _name, string memory _symbol)
+		constructor(
+				string memory name,
+				string memory symbol,
+				uint256 initialSupply,
+				address owner
+		)
         public
-        ERC20(_name, _symbol)
+        ERC20PresetFixedSupply(name, symbol, initialSupply, owner)
     {
-        _mint(msg.sender, initialSupply);
     }
 }
