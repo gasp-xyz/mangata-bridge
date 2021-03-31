@@ -11,21 +11,14 @@
   "ast": {
     "absolutePath": "@openzeppelin/contracts/math/SafeMath.sol",
     "exportedSymbols": {
-      "SafeMath": [
-        2463
-      ]
+      "SafeMath": [2463]
     },
     "id": 2464,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2278,
-        "literals": [
-          "solidity",
-          "^",
-          "0.6",
-          ".0"
-        ],
+        "literals": ["solidity", "^", "0.6", ".0"],
         "nodeType": "PragmaDirective",
         "src": "33:23:15"
       },
@@ -37,9 +30,7 @@
         "documentation": "@dev Wrappers over Solidity's arithmetic operations with added overflow\nchecks.\n * Arithmetic operations in Solidity wrap on overflow. This can easily result\nin bugs, because programmers usually assume that an overflow raises an\nerror, which is the standard behavior in high level programming languages.\n`SafeMath` restores this intuition by reverting the transaction when an\noperation overflows.\n * Using this library instead of the unchecked operations eliminates an entire\nclass of bugs, so it's recommended to use it always.",
         "fullyImplemented": true,
         "id": 2463,
-        "linearizedBaseContracts": [
-          2463
-        ],
+        "linearizedBaseContracts": [2463],
         "name": "SafeMath",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -50,9 +41,7 @@
               "src": "941:109:15",
               "statements": [
                 {
-                  "assignments": [
-                    2288
-                  ],
+                  "assignments": [2288],
                   "declarations": [
                     {
                       "constant": false,
@@ -213,10 +202,7 @@
                       "id": 2293,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "978:7:15",
                       "typeDescriptions": {
@@ -446,10 +432,7 @@
                       "id": 2312,
                       "name": "sub",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2319,
-                        2346
-                      ],
+                      "overloadedDeclarations": [2319, 2346],
                       "referencedDeclaration": 2346,
                       "src": "1405:3:15",
                       "typeDescriptions": {
@@ -671,10 +654,7 @@
                       "id": 2330,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "1851:7:15",
                       "typeDescriptions": {
@@ -702,9 +682,7 @@
                   "src": "1851:29:15"
                 },
                 {
-                  "assignments": [
-                    2338
-                  ],
+                  "assignments": [2338],
                   "declarations": [
                     {
                       "constant": false,
@@ -1034,9 +1012,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    2363
-                  ],
+                  "assignments": [2363],
                   "declarations": [
                     {
                       "constant": false,
@@ -1229,10 +1205,7 @@
                       "id": 2368,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "2557:7:15",
                       "typeDescriptions": {
@@ -1462,10 +1435,7 @@
                       "id": 2389,
                       "name": "div",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2396,
-                        2423
-                      ],
+                      "overloadedDeclarations": [2396, 2423],
                       "referencedDeclaration": 2423,
                       "src": "3185:3:15",
                       "typeDescriptions": {
@@ -1692,10 +1662,7 @@
                       "id": 2407,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "3818:7:15",
                       "typeDescriptions": {
@@ -1723,9 +1690,7 @@
                   "src": "3818:28:15"
                 },
                 {
-                  "assignments": [
-                    2415
-                  ],
+                  "assignments": [2415],
                   "declarations": [
                     {
                       "constant": false,
@@ -2034,10 +1999,7 @@
                       "id": 2432,
                       "name": "mod",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2439,
-                        2462
-                      ],
+                      "overloadedDeclarations": [2439, 2462],
                       "referencedDeclaration": 2462,
                       "src": "4520:3:15",
                       "typeDescriptions": {
@@ -2264,10 +2226,7 @@
                       "id": 2450,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "5140:7:15",
                       "typeDescriptions": {
@@ -2493,21 +2452,14 @@
   "legacyAST": {
     "absolutePath": "@openzeppelin/contracts/math/SafeMath.sol",
     "exportedSymbols": {
-      "SafeMath": [
-        2463
-      ]
+      "SafeMath": [2463]
     },
     "id": 2464,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2278,
-        "literals": [
-          "solidity",
-          "^",
-          "0.6",
-          ".0"
-        ],
+        "literals": ["solidity", "^", "0.6", ".0"],
         "nodeType": "PragmaDirective",
         "src": "33:23:15"
       },
@@ -2519,9 +2471,7 @@
         "documentation": "@dev Wrappers over Solidity's arithmetic operations with added overflow\nchecks.\n * Arithmetic operations in Solidity wrap on overflow. This can easily result\nin bugs, because programmers usually assume that an overflow raises an\nerror, which is the standard behavior in high level programming languages.\n`SafeMath` restores this intuition by reverting the transaction when an\noperation overflows.\n * Using this library instead of the unchecked operations eliminates an entire\nclass of bugs, so it's recommended to use it always.",
         "fullyImplemented": true,
         "id": 2463,
-        "linearizedBaseContracts": [
-          2463
-        ],
+        "linearizedBaseContracts": [2463],
         "name": "SafeMath",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -2532,9 +2482,7 @@
               "src": "941:109:15",
               "statements": [
                 {
-                  "assignments": [
-                    2288
-                  ],
+                  "assignments": [2288],
                   "declarations": [
                     {
                       "constant": false,
@@ -2695,10 +2643,7 @@
                       "id": 2293,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "978:7:15",
                       "typeDescriptions": {
@@ -2928,10 +2873,7 @@
                       "id": 2312,
                       "name": "sub",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2319,
-                        2346
-                      ],
+                      "overloadedDeclarations": [2319, 2346],
                       "referencedDeclaration": 2346,
                       "src": "1405:3:15",
                       "typeDescriptions": {
@@ -3153,10 +3095,7 @@
                       "id": 2330,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "1851:7:15",
                       "typeDescriptions": {
@@ -3184,9 +3123,7 @@
                   "src": "1851:29:15"
                 },
                 {
-                  "assignments": [
-                    2338
-                  ],
+                  "assignments": [2338],
                   "declarations": [
                     {
                       "constant": false,
@@ -3516,9 +3453,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    2363
-                  ],
+                  "assignments": [2363],
                   "declarations": [
                     {
                       "constant": false,
@@ -3711,10 +3646,7 @@
                       "id": 2368,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "2557:7:15",
                       "typeDescriptions": {
@@ -3944,10 +3876,7 @@
                       "id": 2389,
                       "name": "div",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2396,
-                        2423
-                      ],
+                      "overloadedDeclarations": [2396, 2423],
                       "referencedDeclaration": 2423,
                       "src": "3185:3:15",
                       "typeDescriptions": {
@@ -4174,10 +4103,7 @@
                       "id": 2407,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "3818:7:15",
                       "typeDescriptions": {
@@ -4205,9 +4131,7 @@
                   "src": "3818:28:15"
                 },
                 {
-                  "assignments": [
-                    2415
-                  ],
+                  "assignments": [2415],
                   "declarations": [
                     {
                       "constant": false,
@@ -4516,10 +4440,7 @@
                       "id": 2432,
                       "name": "mod",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2439,
-                        2462
-                      ],
+                      "overloadedDeclarations": [2439, 2462],
                       "referencedDeclaration": 2462,
                       "src": "4520:3:15",
                       "typeDescriptions": {
@@ -4746,10 +4667,7 @@
                       "id": 2450,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "5140:7:15",
                       "typeDescriptions": {

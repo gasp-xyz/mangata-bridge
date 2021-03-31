@@ -31,10 +31,8 @@ To enable revive for linting in VS-code, add the following to your config:
 
 ```json
 {
-    "go.lintTool": "revive",
-    "go.lintFlags": [
-        "-config=${workspaceFolder}/revive.toml"
-    ],
+  "go.lintTool": "revive",
+  "go.lintFlags": ["-config=${workspaceFolder}/revive.toml"]
 }
 ```
 
@@ -56,7 +54,7 @@ To ensure the ethereum contracts are deployed, follow the [Setup](../ethereum/RE
 
 ## Configuration
 
-Before running the relayer, it needs to be configured first. By default the configuration file is read from  `~/.config/artemis-relay/config.toml`, but this can be overriden by passing the `--config PATH` flag to the relayer binary.
+Before running the relayer, it needs to be configured first. By default the configuration file is read from `~/.config/artemis-relay/config.toml`, but this can be overriden by passing the `--config PATH` flag to the relayer binary.
 
 To autogenerate a valid config file, run:
 

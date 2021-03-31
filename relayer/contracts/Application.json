@@ -38,21 +38,14 @@
   "ast": {
     "absolutePath": "/C/Users/Gleb Urvanov/workspace/polkadot-ethereum/ethereum/contracts/Application.sol",
     "exportedSymbols": {
-      "Application": [
-        12
-      ]
+      "Application": [12]
     },
     "id": 13,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1,
-        "literals": [
-          "solidity",
-          ">=",
-          "0.6",
-          ".2"
-        ],
+        "literals": ["solidity", ">=", "0.6", ".2"],
         "nodeType": "PragmaDirective",
         "src": "33:24:0"
       },
@@ -64,9 +57,7 @@
         "documentation": null,
         "fullyImplemented": false,
         "id": 12,
-        "linearizedBaseContracts": [
-          12
-        ],
+        "linearizedBaseContracts": [12],
         "name": "Application",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -195,21 +186,14 @@
   "legacyAST": {
     "absolutePath": "/C/Users/Gleb Urvanov/workspace/polkadot-ethereum/ethereum/contracts/Application.sol",
     "exportedSymbols": {
-      "Application": [
-        12
-      ]
+      "Application": [12]
     },
     "id": 13,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1,
-        "literals": [
-          "solidity",
-          ">=",
-          "0.6",
-          ".2"
-        ],
+        "literals": ["solidity", ">=", "0.6", ".2"],
         "nodeType": "PragmaDirective",
         "src": "33:24:0"
       },
@@ -221,9 +205,7 @@
         "documentation": null,
         "fullyImplemented": false,
         "id": 12,
-        "linearizedBaseContracts": [
-          12
-        ],
+        "linearizedBaseContracts": [12],
         "name": "Application",
         "nodeType": "ContractDefinition",
         "nodes": [

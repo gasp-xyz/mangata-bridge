@@ -23,10 +23,12 @@ contract ERC20App is Application {
         bridge = _bridge;
     }
 
-    function sendERC20(bytes32 _recipient, address _tokenAddr, uint256 _amount)
-        public
-    {
-       require(
+    function sendERC20(
+        bytes32 _recipient,
+        address _tokenAddr,
+        uint256 _amount
+    ) public {
+        require(
             IERC20(_tokenAddr).transferFrom(msg.sender, address(this), _amount),
             "Contract token allowances insufficient to complete this lock request"
         );
@@ -37,10 +39,7 @@ contract ERC20App is Application {
         emit AppTransfer(msg.sender, _recipient, _tokenAddr, _amount);
     }
 
-    function handle(bytes memory _data)
-        public
-        override
-    {
+    function handle(bytes memory _data) public override {
         require(msg.sender == bridge);
         require(_data.length >= PAYLOAD_LENGTH, "Invalid Payload");
 
@@ -59,11 +58,16 @@ contract ERC20App is Application {
         emit Unlock(sender, recipient, tokenAddr, amount);
     }
 
-    function sendTokens(address _recipient, address _token, uint256 _amount)
-        internal
-    {
+    function sendTokens(
+        address _recipient,
+        address _token,
+        uint256 _amount
+    ) internal {
         require(_amount > 0, "Must unlock a positive amount");
-        require(_amount <= totalTokens[_token], "ERC20 token balances insufficient to fulfill the unlock request");
+        require(
+            _amount <= totalTokens[_token],
+            "ERC20 token balances insufficient to fulfill the unlock request"
+        );
 
         totalTokens[_token] = totalTokens[_token].sub(_amount);
         require(IERC20(_token).transfer(_recipient, _amount), "ERC20 token transfer failed");

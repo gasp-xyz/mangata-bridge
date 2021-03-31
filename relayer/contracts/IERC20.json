@@ -195,21 +195,14 @@
   "ast": {
     "absolutePath": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
     "exportedSymbols": {
-      "IERC20": [
-        2532
-      ]
+      "IERC20": [2532]
     },
     "id": 2533,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2465,
-        "literals": [
-          "solidity",
-          "^",
-          "0.6",
-          ".0"
-        ],
+        "literals": ["solidity", "^", "0.6", ".0"],
         "nodeType": "PragmaDirective",
         "src": "33:23:16"
       },
@@ -221,9 +214,7 @@
         "documentation": "@dev Interface of the ERC20 standard as defined in the EIP.",
         "fullyImplemented": false,
         "id": 2532,
-        "linearizedBaseContracts": [
-          2532
-        ],
+        "linearizedBaseContracts": [2532],
         "name": "IERC20",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1063,21 +1054,14 @@
   "legacyAST": {
     "absolutePath": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
     "exportedSymbols": {
-      "IERC20": [
-        2532
-      ]
+      "IERC20": [2532]
     },
     "id": 2533,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 2465,
-        "literals": [
-          "solidity",
-          "^",
-          "0.6",
-          ".0"
-        ],
+        "literals": ["solidity", "^", "0.6", ".0"],
         "nodeType": "PragmaDirective",
         "src": "33:23:16"
       },
@@ -1089,9 +1073,7 @@
         "documentation": "@dev Interface of the ERC20 standard as defined in the EIP.",
         "fullyImplemented": false,
         "id": 2532,
-        "linearizedBaseContracts": [
-          2532
-        ],
+        "linearizedBaseContracts": [2532],
         "name": "IERC20",
         "nodeType": "ContractDefinition",
         "nodes": [

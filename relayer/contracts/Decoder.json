@@ -32,21 +32,14 @@
   "ast": {
     "absolutePath": "/C/Users/Gleb Urvanov/workspace/polkadot-ethereum/ethereum/contracts/Decoder.sol",
     "exportedSymbols": {
-      "Decoder": [
-        298
-      ]
+      "Decoder": [298]
     },
     "id": 299,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 188,
-        "literals": [
-          "solidity",
-          ">=",
-          "0.6",
-          ".2"
-        ],
+        "literals": ["solidity", ">=", "0.6", ".2"],
         "nodeType": "PragmaDirective",
         "src": "32:24:2"
       },
@@ -58,9 +51,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 298,
-        "linearizedBaseContracts": [
-          298
-        ],
+        "linearizedBaseContracts": [298],
         "name": "Decoder",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -71,9 +62,7 @@
               "src": "277:187:2",
               "statements": [
                 {
-                  "assignments": [
-                    196
-                  ],
+                  "assignments": [196],
                   "declarations": [
                     {
                       "constant": false,
@@ -600,9 +589,7 @@
                   },
                   "id": 237,
                   "initializationExpression": {
-                    "assignments": [
-                      199
-                    ],
+                    "assignments": [199],
                     "declarations": [
                       {
                         "constant": false,
@@ -959,10 +946,7 @@
                       "id": 252,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "721:7:2",
                       "typeDescriptions": {
@@ -990,9 +974,7 @@
                   "src": "721:66:2"
                 },
                 {
-                  "assignments": [
-                    264
-                  ],
+                  "assignments": [264],
                   "declarations": [
                     {
                       "constant": false,
@@ -2072,10 +2054,7 @@
                       "id": 279,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "2227:7:2",
                       "typeDescriptions": {
@@ -2103,9 +2082,7 @@
                   "src": "2227:61:2"
                 },
                 {
-                  "assignments": [
-                    291
-                  ],
+                  "assignments": [291],
                   "declarations": [
                     {
                       "constant": false,
@@ -2396,21 +2373,14 @@
   "legacyAST": {
     "absolutePath": "/C/Users/Gleb Urvanov/workspace/polkadot-ethereum/ethereum/contracts/Decoder.sol",
     "exportedSymbols": {
-      "Decoder": [
-        298
-      ]
+      "Decoder": [298]
     },
     "id": 299,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 188,
-        "literals": [
-          "solidity",
-          ">=",
-          "0.6",
-          ".2"
-        ],
+        "literals": ["solidity", ">=", "0.6", ".2"],
         "nodeType": "PragmaDirective",
         "src": "32:24:2"
       },
@@ -2422,9 +2392,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 298,
-        "linearizedBaseContracts": [
-          298
-        ],
+        "linearizedBaseContracts": [298],
         "name": "Decoder",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -2435,9 +2403,7 @@
               "src": "277:187:2",
               "statements": [
                 {
-                  "assignments": [
-                    196
-                  ],
+                  "assignments": [196],
                   "declarations": [
                     {
                       "constant": false,
@@ -2964,9 +2930,7 @@
                   },
                   "id": 237,
                   "initializationExpression": {
-                    "assignments": [
-                      199
-                    ],
+                    "assignments": [199],
                     "declarations": [
                       {
                         "constant": false,
@@ -3323,10 +3287,7 @@
                       "id": 252,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "721:7:2",
                       "typeDescriptions": {
@@ -3354,9 +3315,7 @@
                   "src": "721:66:2"
                 },
                 {
-                  "assignments": [
-                    264
-                  ],
+                  "assignments": [264],
                   "declarations": [
                     {
                       "constant": false,
@@ -4436,10 +4395,7 @@
                       "id": 279,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "2227:7:2",
                       "typeDescriptions": {
@@ -4467,9 +4423,7 @@
                   "src": "2227:61:2"
                 },
                 {
-                  "assignments": [
-                    291
-                  ],
+                  "assignments": [291],
                   "declarations": [
                     {
                       "constant": false,

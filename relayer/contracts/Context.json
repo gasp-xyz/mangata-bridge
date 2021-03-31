@@ -11,21 +11,14 @@
   "ast": {
     "absolutePath": "/C/Users/Gleb Urvanov/workspace/polkadot-ethereum/ethereum/node_modules/@openzeppelin/contracts/GSN/Context.sol",
     "exportedSymbols": {
-      "Context": [
-        1335
-      ]
+      "Context": [1335]
     },
     "id": 1336,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1314,
-        "literals": [
-          "solidity",
-          "^",
-          "0.6",
-          ".0"
-        ],
+        "literals": ["solidity", "^", "0.6", ".0"],
         "nodeType": "PragmaDirective",
         "src": "33:23:10"
       },
@@ -37,9 +30,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 1335,
-        "linearizedBaseContracts": [
-          1335
-        ],
+        "linearizedBaseContracts": [1335],
         "name": "Context",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -266,21 +257,14 @@
   "legacyAST": {
     "absolutePath": "/C/Users/Gleb Urvanov/workspace/polkadot-ethereum/ethereum/node_modules/@openzeppelin/contracts/GSN/Context.sol",
     "exportedSymbols": {
-      "Context": [
-        1335
-      ]
+      "Context": [1335]
     },
     "id": 1336,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1314,
-        "literals": [
-          "solidity",
-          "^",
-          "0.6",
-          ".0"
-        ],
+        "literals": ["solidity", "^", "0.6", ".0"],
         "nodeType": "PragmaDirective",
         "src": "33:23:10"
       },
@@ -292,9 +276,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 1335,
-        "linearizedBaseContracts": [
-          1335
-        ],
+        "linearizedBaseContracts": [1335],
         "name": "Context",
         "nodeType": "ContractDefinition",
         "nodes": [

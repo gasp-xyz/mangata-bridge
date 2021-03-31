@@ -10,7 +10,7 @@ The E2E tests run against dockerized services.
    ```bash
    yarn global add truffle
    (cd ../ethereum && yarn install)
-    ```
+   ```
 
 3. Docker and docker-compose
 

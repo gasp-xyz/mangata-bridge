@@ -298,21 +298,14 @@
   "ast": {
     "absolutePath": "/C/Users/Gleb Urvanov/workspace/polkadot-ethereum/ethereum/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
     "exportedSymbols": {
-      "ERC20": [
-        2010
-      ]
+      "ERC20": [2010]
     },
     "id": 2011,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1524,
-        "literals": [
-          "solidity",
-          "^",
-          "0.6",
-          ".0"
-        ],
+        "literals": ["solidity", "^", "0.6", ".0"],
         "nodeType": "PragmaDirective",
         "src": "33:23:12"
       },
@@ -400,19 +393,12 @@
             "src": "1372:6:12"
           }
         ],
-        "contractDependencies": [
-          1335,
-          2079
-        ],
+        "contractDependencies": [1335, 2079],
         "contractKind": "contract",
         "documentation": "@dev Implementation of the {IERC20} interface.\n * This implementation is agnostic to the way tokens are created. This means\nthat a supply mechanism has to be added in a derived contract using {_mint}.\nFor a generic mechanism see {ERC20PresetMinterPauser}.\n * TIP: For a detailed writeup see our guide\nhttps://forum.zeppelin.solutions/t/how-to-implement-erc20-supply-mechanisms/226[How\nto implement supply mechanisms].\n * We have followed general OpenZeppelin guidelines: functions revert instead\nof returning `false` on failure. This behavior is nonetheless conventional\nand does not conflict with the expectations of ERC20 applications.\n * Additionally, an {Approval} event is emitted on calls to {transferFrom}.\nThis allows applications to reconstruct the allowance for all accounts just\nby listening to said events. Other implementations of the EIP may not emit\nthese events, as it isn't required by the specification.\n * Finally, the non-standard {decreaseAllowance} and {increaseAllowance}\nfunctions have been added to mitigate the well-known issues around setting\nallowances. See {IERC20-approve}.",
         "fullyImplemented": true,
         "id": 2010,
-        "linearizedBaseContracts": [
-          2010,
-          2079,
-          1335
-        ],
+        "linearizedBaseContracts": [2010, 2079, 1335],
         "name": "ERC20",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1169,9 +1155,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              2017
-            ],
+            "baseFunctions": [2017],
             "body": {
               "id": 1608,
               "nodeType": "Block",
@@ -1259,9 +1243,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              2024
-            ],
+            "baseFunctions": [2024],
             "body": {
               "id": 1621,
               "nodeType": "Block",
@@ -1405,9 +1387,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              2033
-            ],
+            "baseFunctions": [2033],
             "body": {
               "id": 1641,
               "nodeType": "Block",
@@ -1663,9 +1643,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              2042
-            ],
+            "baseFunctions": [2042],
             "body": {
               "id": 1658,
               "nodeType": "Block",
@@ -1864,9 +1842,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              2051
-            ],
+            "baseFunctions": [2051],
             "body": {
               "id": 1678,
               "nodeType": "Block",
@@ -2122,9 +2098,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              2062
-            ],
+            "baseFunctions": [2062],
             "body": {
               "id": 1715,
               "nodeType": "Block",
@@ -3556,10 +3530,7 @@
                       "id": 1780,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "7132:7:12",
                       "typeDescriptions": {
@@ -3721,10 +3692,7 @@
                       "id": 1790,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "7212:7:12",
                       "typeDescriptions": {
@@ -4510,10 +4478,7 @@
                       "id": 1843,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "7910:7:12",
                       "typeDescriptions": {
@@ -5301,10 +5266,7 @@
                       "id": 1897,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "8599:7:12",
                       "typeDescriptions": {
@@ -6114,10 +6076,7 @@
                       "id": 1954,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "9452:7:12",
                       "typeDescriptions": {
@@ -6279,10 +6238,7 @@
                       "id": 1964,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "9530:7:12",
                       "typeDescriptions": {
@@ -6845,21 +6801,14 @@
   "legacyAST": {
     "absolutePath": "/C/Users/Gleb Urvanov/workspace/polkadot-ethereum/ethereum/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol",
     "exportedSymbols": {
-      "ERC20": [
-        2010
-      ]
+      "ERC20": [2010]
     },
     "id": 2011,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1524,
-        "literals": [
-          "solidity",
-          "^",
-          "0.6",
-          ".0"
-        ],
+        "literals": ["solidity", "^", "0.6", ".0"],
         "nodeType": "PragmaDirective",
         "src": "33:23:12"
       },
@@ -6947,19 +6896,12 @@
             "src": "1372:6:12"
           }
         ],
-        "contractDependencies": [
-          1335,
-          2079
-        ],
+        "contractDependencies": [1335, 2079],
         "contractKind": "contract",
         "documentation": "@dev Implementation of the {IERC20} interface.\n * This implementation is agnostic to the way tokens are created. This means\nthat a supply mechanism has to be added in a derived contract using {_mint}.\nFor a generic mechanism see {ERC20PresetMinterPauser}.\n * TIP: For a detailed writeup see our guide\nhttps://forum.zeppelin.solutions/t/how-to-implement-erc20-supply-mechanisms/226[How\nto implement supply mechanisms].\n * We have followed general OpenZeppelin guidelines: functions revert instead\nof returning `false` on failure. This behavior is nonetheless conventional\nand does not conflict with the expectations of ERC20 applications.\n * Additionally, an {Approval} event is emitted on calls to {transferFrom}.\nThis allows applications to reconstruct the allowance for all accounts just\nby listening to said events. Other implementations of the EIP may not emit\nthese events, as it isn't required by the specification.\n * Finally, the non-standard {decreaseAllowance} and {increaseAllowance}\nfunctions have been added to mitigate the well-known issues around setting\nallowances. See {IERC20-approve}.",
         "fullyImplemented": true,
         "id": 2010,
-        "linearizedBaseContracts": [
-          2010,
-          2079,
-          1335
-        ],
+        "linearizedBaseContracts": [2010, 2079, 1335],
         "name": "ERC20",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -7716,9 +7658,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              2017
-            ],
+            "baseFunctions": [2017],
             "body": {
               "id": 1608,
               "nodeType": "Block",
@@ -7806,9 +7746,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              2024
-            ],
+            "baseFunctions": [2024],
             "body": {
               "id": 1621,
               "nodeType": "Block",
@@ -7952,9 +7890,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              2033
-            ],
+            "baseFunctions": [2033],
             "body": {
               "id": 1641,
               "nodeType": "Block",
@@ -8210,9 +8146,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              2042
-            ],
+            "baseFunctions": [2042],
             "body": {
               "id": 1658,
               "nodeType": "Block",
@@ -8411,9 +8345,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              2051
-            ],
+            "baseFunctions": [2051],
             "body": {
               "id": 1678,
               "nodeType": "Block",
@@ -8669,9 +8601,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              2062
-            ],
+            "baseFunctions": [2062],
             "body": {
               "id": 1715,
               "nodeType": "Block",
@@ -10103,10 +10033,7 @@
                       "id": 1780,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "7132:7:12",
                       "typeDescriptions": {
@@ -10268,10 +10195,7 @@
                       "id": 1790,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "7212:7:12",
                       "typeDescriptions": {
@@ -11057,10 +10981,7 @@
                       "id": 1843,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "7910:7:12",
                       "typeDescriptions": {
@@ -11848,10 +11769,7 @@
                       "id": 1897,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "8599:7:12",
                       "typeDescriptions": {
@@ -12661,10 +12579,7 @@
                       "id": 1954,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "9452:7:12",
                       "typeDescriptions": {
@@ -12826,10 +12741,7 @@
                       "id": 1964,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "9530:7:12",
                       "typeDescriptions": {

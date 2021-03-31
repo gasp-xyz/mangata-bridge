@@ -50,21 +50,14 @@
   "ast": {
     "absolutePath": "/C/Users/Gleb Urvanov/workspace/polkadot-ethereum/ethereum/contracts/Scale.sol",
     "exportedSymbols": {
-      "Scale": [
-        988
-      ]
+      "Scale": [988]
     },
     "id": 989,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 765,
-        "literals": [
-          "solidity",
-          ">=",
-          "0.6",
-          ".2"
-        ],
+        "literals": ["solidity", ">=", "0.6", ".2"],
         "nodeType": "PragmaDirective",
         "src": "32:24:6"
       },
@@ -76,9 +69,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 988,
-        "linearizedBaseContracts": [
-          988
-        ],
+        "linearizedBaseContracts": [988],
         "name": "Scale",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -89,9 +80,7 @@
               "src": "276:187:6",
               "statements": [
                 {
-                  "assignments": [
-                    773
-                  ],
+                  "assignments": [773],
                   "declarations": [
                     {
                       "constant": false,
@@ -618,9 +607,7 @@
                   },
                   "id": 814,
                   "initializationExpression": {
-                    "assignments": [
-                      776
-                    ],
+                    "assignments": [776],
                     "declarations": [
                       {
                         "constant": false,
@@ -831,9 +818,7 @@
               "src": "629:1600:6",
               "statements": [
                 {
-                  "assignments": [
-                    826
-                  ],
+                  "assignments": [826],
                   "declarations": [
                     {
                       "constant": false,
@@ -940,9 +925,7 @@
                   "src": "639:34:6"
                 },
                 {
-                  "assignments": [
-                    833
-                  ],
+                  "assignments": [833],
                   "declarations": [
                     {
                       "constant": false,
@@ -1268,10 +1251,7 @@
                                   "id": 960,
                                   "name": "revert",
                                   "nodeType": "Identifier",
-                                  "overloadedDeclarations": [
-                                    -19,
-                                    -19
-                                  ],
+                                  "overloadedDeclarations": [-19, -19],
                                   "referencedDeclaration": -19,
                                   "src": "2176:6:6",
                                   "typeDescriptions": {
@@ -1309,9 +1289,7 @@
                           "src": "1928:228:6",
                           "statements": [
                             {
-                              "assignments": [
-                                947
-                              ],
+                              "assignments": [947],
                               "declarations": [
                                 {
                                   "constant": false,
@@ -1482,10 +1460,7 @@
                                   "id": 952,
                                   "name": "require",
                                   "nodeType": "Identifier",
-                                  "overloadedDeclarations": [
-                                    -18,
-                                    -18
-                                  ],
+                                  "overloadedDeclarations": [-18, -18],
                                   "referencedDeclaration": -18,
                                   "src": "2073:7:6",
                                   "typeDescriptions": {
@@ -1524,9 +1499,7 @@
                         "src": "1378:529:6",
                         "statements": [
                           {
-                            "assignments": [
-                              877
-                            ],
+                            "assignments": [877],
                             "declarations": [
                               {
                                 "constant": false,
@@ -1633,9 +1606,7 @@
                             "src": "1438:35:6"
                           },
                           {
-                            "assignments": [
-                              884
-                            ],
+                            "assignments": [884],
                             "declarations": [
                               {
                                 "constant": false,
@@ -1742,9 +1713,7 @@
                             "src": "1517:35:6"
                           },
                           {
-                            "assignments": [
-                              891
-                            ],
+                            "assignments": [891],
                             "declarations": [
                               {
                                 "constant": false,
@@ -1851,9 +1820,7 @@
                             "src": "1566:35:6"
                           },
                           {
-                            "assignments": [
-                              898
-                            ],
+                            "assignments": [898],
                             "declarations": [
                               {
                                 "constant": false,
@@ -2066,9 +2033,7 @@
                             "src": "1616:39:6"
                           },
                           {
-                            "assignments": [
-                              912
-                            ],
+                            "assignments": [912],
                             "declarations": [
                               {
                                 "constant": false,
@@ -2233,9 +2198,7 @@
                             "src": "1698:33:6"
                           },
                           {
-                            "assignments": [
-                              923
-                            ],
+                            "assignments": [923],
                             "declarations": [
                               {
                                 "constant": false,
@@ -2529,9 +2492,7 @@
                       "src": "969:388:6",
                       "statements": [
                         {
-                          "assignments": [
-                            850
-                          ],
+                          "assignments": [850],
                           "declarations": [
                             {
                               "constant": false,
@@ -2638,9 +2599,7 @@
                           "src": "1021:35:6"
                         },
                         {
-                          "assignments": [
-                            857
-                          ],
+                          "assignments": [857],
                           "declarations": [
                             {
                               "constant": false,
@@ -3216,21 +3175,14 @@
   "legacyAST": {
     "absolutePath": "/C/Users/Gleb Urvanov/workspace/polkadot-ethereum/ethereum/contracts/Scale.sol",
     "exportedSymbols": {
-      "Scale": [
-        988
-      ]
+      "Scale": [988]
     },
     "id": 989,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 765,
-        "literals": [
-          "solidity",
-          ">=",
-          "0.6",
-          ".2"
-        ],
+        "literals": ["solidity", ">=", "0.6", ".2"],
         "nodeType": "PragmaDirective",
         "src": "32:24:6"
       },
@@ -3242,9 +3194,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 988,
-        "linearizedBaseContracts": [
-          988
-        ],
+        "linearizedBaseContracts": [988],
         "name": "Scale",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -3255,9 +3205,7 @@
               "src": "276:187:6",
               "statements": [
                 {
-                  "assignments": [
-                    773
-                  ],
+                  "assignments": [773],
                   "declarations": [
                     {
                       "constant": false,
@@ -3784,9 +3732,7 @@
                   },
                   "id": 814,
                   "initializationExpression": {
-                    "assignments": [
-                      776
-                    ],
+                    "assignments": [776],
                     "declarations": [
                       {
                         "constant": false,
@@ -3997,9 +3943,7 @@
               "src": "629:1600:6",
               "statements": [
                 {
-                  "assignments": [
-                    826
-                  ],
+                  "assignments": [826],
                   "declarations": [
                     {
                       "constant": false,
@@ -4106,9 +4050,7 @@
                   "src": "639:34:6"
                 },
                 {
-                  "assignments": [
-                    833
-                  ],
+                  "assignments": [833],
                   "declarations": [
                     {
                       "constant": false,
@@ -4434,10 +4376,7 @@
                                   "id": 960,
                                   "name": "revert",
                                   "nodeType": "Identifier",
-                                  "overloadedDeclarations": [
-                                    -19,
-                                    -19
-                                  ],
+                                  "overloadedDeclarations": [-19, -19],
                                   "referencedDeclaration": -19,
                                   "src": "2176:6:6",
                                   "typeDescriptions": {
@@ -4475,9 +4414,7 @@
                           "src": "1928:228:6",
                           "statements": [
                             {
-                              "assignments": [
-                                947
-                              ],
+                              "assignments": [947],
                               "declarations": [
                                 {
                                   "constant": false,
@@ -4648,10 +4585,7 @@
                                   "id": 952,
                                   "name": "require",
                                   "nodeType": "Identifier",
-                                  "overloadedDeclarations": [
-                                    -18,
-                                    -18
-                                  ],
+                                  "overloadedDeclarations": [-18, -18],
                                   "referencedDeclaration": -18,
                                   "src": "2073:7:6",
                                   "typeDescriptions": {
@@ -4690,9 +4624,7 @@
                         "src": "1378:529:6",
                         "statements": [
                           {
-                            "assignments": [
-                              877
-                            ],
+                            "assignments": [877],
                             "declarations": [
                               {
                                 "constant": false,
@@ -4799,9 +4731,7 @@
                             "src": "1438:35:6"
                           },
                           {
-                            "assignments": [
-                              884
-                            ],
+                            "assignments": [884],
                             "declarations": [
                               {
                                 "constant": false,
@@ -4908,9 +4838,7 @@
                             "src": "1517:35:6"
                           },
                           {
-                            "assignments": [
-                              891
-                            ],
+                            "assignments": [891],
                             "declarations": [
                               {
                                 "constant": false,
@@ -5017,9 +4945,7 @@
                             "src": "1566:35:6"
                           },
                           {
-                            "assignments": [
-                              898
-                            ],
+                            "assignments": [898],
                             "declarations": [
                               {
                                 "constant": false,
@@ -5232,9 +5158,7 @@
                             "src": "1616:39:6"
                           },
                           {
-                            "assignments": [
-                              912
-                            ],
+                            "assignments": [912],
                             "declarations": [
                               {
                                 "constant": false,
@@ -5399,9 +5323,7 @@
                             "src": "1698:33:6"
                           },
                           {
-                            "assignments": [
-                              923
-                            ],
+                            "assignments": [923],
                             "declarations": [
                               {
                                 "constant": false,
@@ -5695,9 +5617,7 @@
                       "src": "969:388:6",
                       "statements": [
                         {
-                          "assignments": [
-                            850
-                          ],
+                          "assignments": [850],
                           "declarations": [
                             {
                               "constant": false,
@@ -5804,9 +5724,7 @@
                           "src": "1021:35:6"
                         },
                         {
-                          "assignments": [
-                            857
-                          ],
+                          "assignments": [857],
                           "declarations": [
                             {
                               "constant": false,

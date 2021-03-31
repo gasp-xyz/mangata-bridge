@@ -309,21 +309,14 @@
   "ast": {
     "absolutePath": "/C/Users/Gleb Urvanov/workspace/polkadot-ethereum/ethereum/contracts/test/BankToken.sol",
     "exportedSymbols": {
-      "TestToken": [
-        1185
-      ]
+      "TestToken": [1185]
     },
     "id": 1186,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1161,
-        "literals": [
-          "solidity",
-          "^",
-          "0.6",
-          ".2"
-        ],
+        "literals": ["solidity", "^", "0.6", ".2"],
         "nodeType": "PragmaDirective",
         "src": "32:23:8"
       },
@@ -360,21 +353,12 @@
             "src": "155:5:8"
           }
         ],
-        "contractDependencies": [
-          1335,
-          2010,
-          2079
-        ],
+        "contractDependencies": [1335, 2010, 2079],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 1185,
-        "linearizedBaseContracts": [
-          1185,
-          2010,
-          2079,
-          1335
-        ],
+        "linearizedBaseContracts": [1185, 2010, 2079, 1335],
         "name": "TestToken",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -639,21 +623,14 @@
   "legacyAST": {
     "absolutePath": "/C/Users/Gleb Urvanov/workspace/polkadot-ethereum/ethereum/contracts/test/BankToken.sol",
     "exportedSymbols": {
-      "TestToken": [
-        1185
-      ]
+      "TestToken": [1185]
     },
     "id": 1186,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1161,
-        "literals": [
-          "solidity",
-          "^",
-          "0.6",
-          ".2"
-        ],
+        "literals": ["solidity", "^", "0.6", ".2"],
         "nodeType": "PragmaDirective",
         "src": "32:23:8"
       },
@@ -690,21 +667,12 @@
             "src": "155:5:8"
           }
         ],
-        "contractDependencies": [
-          1335,
-          2010,
-          2079
-        ],
+        "contractDependencies": [1335, 2010, 2079],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 1185,
-        "linearizedBaseContracts": [
-          1185,
-          2010,
-          2079,
-          1335
-        ],
+        "linearizedBaseContracts": [1185, 2010, 2079, 1335],
         "name": "TestToken",
         "nodeType": "ContractDefinition",
         "nodes": [

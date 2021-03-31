@@ -126,21 +126,14 @@
   "ast": {
     "absolutePath": "/C/Users/Gleb Urvanov/workspace/polkadot-ethereum/ethereum/contracts/Verifier.sol",
     "exportedSymbols": {
-      "Verifier": [
-        1159
-      ]
+      "Verifier": [1159]
     },
     "id": 1160,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 990,
-        "literals": [
-          "solidity",
-          ">=",
-          "0.6",
-          ".2"
-        ],
+        "literals": ["solidity", ">=", "0.6", ".2"],
         "nodeType": "PragmaDirective",
         "src": "32:24:7"
       },
@@ -152,9 +145,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 1159,
-        "linearizedBaseContracts": [
-          1159
-        ],
+        "linearizedBaseContracts": [1159],
         "name": "Verifier",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -433,9 +424,7 @@
               "src": "1063:267:7",
               "statements": [
                 {
-                  "assignments": [
-                    1023
-                  ],
+                  "assignments": [1023],
                   "declarations": [
                     {
                       "constant": false,
@@ -969,9 +958,7 @@
               "src": "2142:95:7",
               "statements": [
                 {
-                  "assignments": [
-                    1062
-                  ],
+                  "assignments": [1062],
                   "declarations": [
                     {
                       "constant": false,
@@ -1351,10 +1338,7 @@
                             "id": 1086,
                             "name": "revert",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -19,
-                              -19
-                            ],
+                            "overloadedDeclarations": [-19, -19],
                             "referencedDeclaration": -19,
                             "src": "2726:6:7",
                             "typeDescriptions": {
@@ -1385,9 +1369,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    1093
-                  ],
+                  "assignments": [1093],
                   "declarations": [
                     {
                       "constant": false,
@@ -1423,9 +1405,7 @@
                   "src": "2791:9:7"
                 },
                 {
-                  "assignments": [
-                    1096
-                  ],
+                  "assignments": [1096],
                   "declarations": [
                     {
                       "constant": false,
@@ -1461,9 +1441,7 @@
                   "src": "2810:9:7"
                 },
                 {
-                  "assignments": [
-                    1099
-                  ],
+                  "assignments": [1099],
                   "declarations": [
                     {
                       "constant": false,
@@ -1848,10 +1826,7 @@
                             "id": 1108,
                             "name": "revert",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -19,
-                              -19
-                            ],
+                            "overloadedDeclarations": [-19, -19],
                             "referencedDeclaration": -19,
                             "src": "3455:6:7",
                             "typeDescriptions": {
@@ -2157,10 +2132,7 @@
                             "id": 1130,
                             "name": "revert",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -19,
-                              -19
-                            ],
+                            "overloadedDeclarations": [-19, -19],
                             "referencedDeclaration": -19,
                             "src": "3703:6:7",
                             "typeDescriptions": {
@@ -2191,9 +2163,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    1137
-                  ],
+                  "assignments": [1137],
                   "declarations": [
                     {
                       "constant": false,
@@ -2464,10 +2434,7 @@
                       "id": 1145,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "3823:7:7",
                       "typeDescriptions": {
@@ -2636,21 +2603,14 @@
   "legacyAST": {
     "absolutePath": "/C/Users/Gleb Urvanov/workspace/polkadot-ethereum/ethereum/contracts/Verifier.sol",
     "exportedSymbols": {
-      "Verifier": [
-        1159
-      ]
+      "Verifier": [1159]
     },
     "id": 1160,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 990,
-        "literals": [
-          "solidity",
-          ">=",
-          "0.6",
-          ".2"
-        ],
+        "literals": ["solidity", ">=", "0.6", ".2"],
         "nodeType": "PragmaDirective",
         "src": "32:24:7"
       },
@@ -2662,9 +2622,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 1159,
-        "linearizedBaseContracts": [
-          1159
-        ],
+        "linearizedBaseContracts": [1159],
         "name": "Verifier",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -2943,9 +2901,7 @@
               "src": "1063:267:7",
               "statements": [
                 {
-                  "assignments": [
-                    1023
-                  ],
+                  "assignments": [1023],
                   "declarations": [
                     {
                       "constant": false,
@@ -3479,9 +3435,7 @@
               "src": "2142:95:7",
               "statements": [
                 {
-                  "assignments": [
-                    1062
-                  ],
+                  "assignments": [1062],
                   "declarations": [
                     {
                       "constant": false,
@@ -3861,10 +3815,7 @@
                             "id": 1086,
                             "name": "revert",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -19,
-                              -19
-                            ],
+                            "overloadedDeclarations": [-19, -19],
                             "referencedDeclaration": -19,
                             "src": "2726:6:7",
                             "typeDescriptions": {
@@ -3895,9 +3846,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    1093
-                  ],
+                  "assignments": [1093],
                   "declarations": [
                     {
                       "constant": false,
@@ -3933,9 +3882,7 @@
                   "src": "2791:9:7"
                 },
                 {
-                  "assignments": [
-                    1096
-                  ],
+                  "assignments": [1096],
                   "declarations": [
                     {
                       "constant": false,
@@ -3971,9 +3918,7 @@
                   "src": "2810:9:7"
                 },
                 {
-                  "assignments": [
-                    1099
-                  ],
+                  "assignments": [1099],
                   "declarations": [
                     {
                       "constant": false,
@@ -4358,10 +4303,7 @@
                             "id": 1108,
                             "name": "revert",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -19,
-                              -19
-                            ],
+                            "overloadedDeclarations": [-19, -19],
                             "referencedDeclaration": -19,
                             "src": "3455:6:7",
                             "typeDescriptions": {
@@ -4667,10 +4609,7 @@
                             "id": 1130,
                             "name": "revert",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -19,
-                              -19
-                            ],
+                            "overloadedDeclarations": [-19, -19],
                             "referencedDeclaration": -19,
                             "src": "3703:6:7",
                             "typeDescriptions": {
@@ -4701,9 +4640,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    1137
-                  ],
+                  "assignments": [1137],
                   "declarations": [
                     {
                       "constant": false,
@@ -4974,10 +4911,7 @@
                       "id": 1145,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "3823:7:7",
                       "typeDescriptions": {
