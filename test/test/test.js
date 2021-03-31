@@ -48,8 +48,6 @@ describe('Bridge', function () {
 
       let { gasCost } = await ethClient.sendEth(ethClient.accounts[1], amount, polkadotRecipient);
       await sleep(30000);
-			// await subClient.waitNewBlock();
-			// await subClient.waitNewBlock();
 
       let afterEthBalance = await ethClient.getEthBalance(ethClient.accounts[1]);
       let afterSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, ETH_ASSET_ID);
@@ -70,8 +68,6 @@ describe('Bridge', function () {
 
       await subClient.burnETH(subClient.alice, ethClient.accounts[1], amount.toFixed())
       await sleep(30000);
-			// await subClient.waitNewBlock();
-			// await subClient.waitNewBlock();
 
       let afterEthBalance = await ethClient.getEthBalance(ethClient.accounts[1]);
       let afterSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, ETH_ASSET_ID);
@@ -95,8 +91,6 @@ describe('Bridge', function () {
       await ethClient.approveERC20(ethClient.accounts[0], amount, this.tokenAddress);
       await ethClient.sendERC20(ethClient.accounts[0], amount, this.tokenAddress, polkadotRecipient);
       await sleep(30000);
-			// await subClient.waitNewBlock();
-			// await subClient.waitNewBlock();
 
       let afterEthBalance = await ethClient.getErc20Balance(ethClient.accounts[0], this.tokenAddress);
       let afterSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, TKN_ASSET_ID);
@@ -116,8 +110,6 @@ describe('Bridge', function () {
 
       await subClient.burnERC20(subClient.alice, this.tokenAddress, ethClient.accounts[0], amount.toFixed())
       await sleep(30000);
-			// await subClient.waitNewBlock();
-			// await subClient.waitNewBlock();
 
       let afterEthBalance = await ethClient.getErc20Balance(ethClient.accounts[0], this.tokenAddress);
       let afterSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, TKN_ASSET_ID);
@@ -133,22 +125,17 @@ describe('Bridge', function () {
 	describe('ERC20 App with MNG', function () {
 
 		it('should lock all MNG ERC20 tokens on Ethereum into Snowbridge bridge contract', async function () {
-      let amount = BigNumber('2000000');
+      let amount = BigNumber('200000000000000000000000000');
 
       let beforeEthBalance = await ethClient.getErc20Balance(ethClient.accounts[1], this.mngAddress);
-			// let beforeERC20Allowance = await ethClient.getErc20Allowance(ethClient.accounts[1], this.mngAddress);
 
       await ethClient.approveERC20(ethClient.accounts[1], amount, this.mngAddress);
 			await ethClient.sendERC20(ethClient.accounts[1], amount, this.mngAddress, subNullRecipient);
       await sleep(30000);
-			// await subClient.waitNewBlock();
-			// await subClient.waitNewBlock();
 
       let afterEthBalance = await ethClient.getErc20Balance(ethClient.accounts[1], this.mngAddress);
-			// let afterERC20Allowance = await ethClient.getErc20Allowance(ethClient.accounts[1], this.mngAddress);
 
       expect(afterEthBalance).to.be.bignumber.equal(beforeEthBalance.minus(amount));
-			// expect(afterERC20Allowance).to.be.bignumber.equal(beforeERC20Allowance.plus(amount));
 
     });
 
@@ -157,21 +144,16 @@ describe('Bridge', function () {
 
       let beforeEthBalance = await ethClient.getErc20Balance(ethClient.accounts[1], this.mngAddress);
       let beforeSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, MNG_ASSET_ID);
-			// let beforeERC20Allowance = await ethClient.getErc20Allowance(ethClient.accounts[1], this.mngAddress);
 
 			await ethClient.approveERC20(ethClient.accounts[1], amount, this.mngAddress);
       await expect(ethClient.sendERC20(ethClient.accounts[1], amount, this.mngAddress, polkadotRecipient)).to.be.rejected;
       await sleep(30000);
-			// await subClient.waitNewBlock();
-			// await subClient.waitNewBlock();
 
       let afterEthBalance = await ethClient.getErc20Balance(ethClient.accounts[1], this.mngAddress);
       let afterSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, MNG_ASSET_ID);
-			// let afterERC20Allowance = await ethClient.getErc20Allowance(ethClient.accounts[1], this.mngAddress);
 
       expect(afterEthBalance).to.be.bignumber.equal(beforeEthBalance);
       expect(afterSubBalance).to.be.bignumber.equal(beforeSubBalance);
-			// expect(afterERC20Allowance).to.be.bignumber.equal(beforeERC20Allowance.minus(amount));
 
       // conservation of value
       expect(beforeEthBalance.plus(beforeSubBalance)).to.be.bignumber.equal(afterEthBalance.plus(afterSubBalance))
@@ -185,8 +167,6 @@ describe('Bridge', function () {
 
       await subClient.burnERC20(subClient.alice, this.mngAddress, ethClient.accounts[1], amount.toFixed())
       await sleep(30000);
-			// await subClient.waitNewBlock();
-			// await subClient.waitNewBlock();
 
       let afterEthBalance = await ethClient.getErc20Balance(ethClient.accounts[1], this.mngAddress);
       let afterSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, MNG_ASSET_ID);
@@ -203,21 +183,16 @@ describe('Bridge', function () {
 
       let beforeEthBalance = await ethClient.getErc20Balance(ethClient.accounts[1], this.mngAddress);
       let beforeSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, MNG_ASSET_ID);
-			// let beforeERC20Allowance = await ethClient.getErc20Allowance(ethClient.accounts[1], this.mngAddress);
 
 			await ethClient.approveERC20(ethClient.accounts[1], amount, this.mngAddress);
       await ethClient.sendERC20(ethClient.accounts[1], amount, this.mngAddress, polkadotRecipient);
       await sleep(30000);
-			// await subClient.waitNewBlock();
-			// await subClient.waitNewBlock();
 
       let afterEthBalance = await ethClient.getErc20Balance(ethClient.accounts[1], this.mngAddress);
       let afterSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, MNG_ASSET_ID);
-			// let afterERC20Allowance = await ethClient.getErc20Allowance(ethClient.accounts[1], this.mngAddress);
 
       expect(afterEthBalance).to.be.bignumber.equal(beforeEthBalance.minus(amount));
       expect(afterSubBalance).to.be.bignumber.equal(beforeSubBalance.plus(amount));
-			// expect(afterERC20Allowance).to.be.bignumber.equal(beforeERC20Allowance.minus(amount));
 
       // conservation of value
       expect(beforeEthBalance.plus(beforeSubBalance)).to.be.bignumber.equal(afterEthBalance.plus(afterSubBalance))
