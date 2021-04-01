@@ -18,11 +18,11 @@ describe('Bridge', function () {
   const polkadotRecipient = "0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d";
   const polkadotRecipientSS58 = "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY";
 
-	const subNullRecipient = "0x0000000000000000000000000000000000000000";
+  const subNullRecipient = "0x0000000000000000000000000000000000000000";
 
-	const MNG_ASSET_ID = "0x00"
+  const MNG_ASSET_ID = "0x00"
   const ETH_ASSET_ID = "0x01"
-	const TKN_ASSET_ID = "0x02"
+  const TKN_ASSET_ID = "0x02"
 
   before(async function () {
 
@@ -30,7 +30,7 @@ describe('Bridge', function () {
     this.ethAppAddress = addrs.ETHApp;
     this.erc20AppAddress = addrs.ERC20App;
     this.tokenAddress = addrs.TestToken;
-		this.mngAddress = addrs.MangataToken;
+    this.mngAddress = addrs.MangataToken;
 
     ethClient = new EthClient("ws://localhost:8545", this.ethAppAddress, this.erc20AppAddress);
     subClient = new SubClient("ws://localhost:9944");
