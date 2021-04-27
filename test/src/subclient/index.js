@@ -59,10 +59,10 @@ class SubClient {
               CurrencyIdOf: 'u32',
               CurrencyId: 'u32',
               App: {
-              	_enum: [
-              		'ETH',
-              		'ERC20'
-              	]
+                _enum: [
+                  'ETH',
+                  'ERC20'
+                ]
               },
 
               Balance: 'u128',
