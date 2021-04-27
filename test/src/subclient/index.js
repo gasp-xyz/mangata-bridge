@@ -59,16 +59,16 @@ class SubClient {
               CurrencyIdOf: 'u32',
               CurrencyId: 'u32',
               App: {
-              		    _enum: [
-              		      'ETH',
-              		      'ERC20'
-              		    ]
-              		  },
+              	_enum: [
+              		'ETH',
+              		'ERC20'
+              	]
+              },
 
               Balance: 'u128',
 
               RpcResult: {
-              	price: 'Balance'
+                price: 'Balance'
               },
 
               // mapping the actual specified address format
