@@ -56,11 +56,20 @@ class SubClient {
             },
             types: {
 
-            	Balance: 'u128',
+              CurrencyIdOf: 'u32',
+              CurrencyId: 'u32',
+              App: {
+                _enum: [
+                  'ETH',
+                  'ERC20'
+                ]
+              },
 
-            	RpcResult: {
-            		price: 'Balance'
-            	},
+              Balance: 'u128',
+
+              RpcResult: {
+                price: 'Balance'
+              },
 
               // mapping the actual specified address format
               Address: 'AccountId',
@@ -122,8 +131,8 @@ class SubClient {
     }
 
     async queryAccountBalance(accountId, assetId) {
-      let accountBalance = await this.api.query.assets.balances([assetId, accountId]);
-      return new BigNumber (accountBalance)
+      let accountDetails = await this.api.query.tokens.accounts(accountId, assetId);
+      return new BigNumber (accountDetails.free)
     }
 
     async burnETH(account, recipient, amount) {
