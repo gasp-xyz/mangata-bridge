@@ -77,28 +77,24 @@ class SubClient {
               CurrencyId: "u32",
               Balance: 'u128',
               App: {
-                  _enum: [
-                      'ETH',
-                      'ERC20'
-                  ]
+                _enum: [
+                  'ETH',
+                  'ERC20'
+                ]
               },
-        
               RpcResult: {
-                  price: 'Balance'
+                price: 'Balance'
               },
-        
               // mapping the actual specified address format
               Address: 'AccountId',
               // mapping the lookup
               LookupSource: 'AccountId',
-        
               AssetInfo: {
                 name: 'Option<Vec<u8>>',
                 symbol: 'Option<Vec<u8>>',
                 description: 'Option<Vec<u8>>',
                 decimals: 'Option<u32>',
               },
-        
               AppId: '[u8; 20]',
               Message: {
                 payload: 'Vec<u8>',
