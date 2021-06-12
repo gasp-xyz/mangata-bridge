@@ -73,8 +73,7 @@ class SubClient {
               },
             },
             types: {
-              CurrencyIdOf: "u32",
-              CurrencyId: "u32",
+              CurrencyId: 'u32',
               Balance: 'u128',
               App: {
                 _enum: [
