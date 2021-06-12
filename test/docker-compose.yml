@@ -34,7 +34,7 @@ services:
       - type: bind
         source: ./build/parachain-state/
         target: /root/.local
-    command: bash -c "./target/release/mangata-node --dev --ws-external"
+    command: bash -c "./target/release/mangata-node --alice --base-path /root/.local --chain local --rpc-cors all --ws-external"
 
   # Relayer
   relayer:

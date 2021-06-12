@@ -1,6 +1,8 @@
 #!/bin/bash
 
 mkdir build
+mkdir build/parachain-state
+mkdir build/relayer-config
 touch build/parachain.env
 
 # Start Ganache

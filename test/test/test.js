@@ -22,7 +22,7 @@ describe('Bridge', function () {
 
   const MNG_ASSET_ID = "0x00"
   const ETH_ASSET_ID = "0x01"
-  const TKN_ASSET_ID = "0x02"
+  const TKN_ASSET_ID = "0x04"
 
   before(async function () {
 

@@ -52,37 +52,53 @@ class SubClient {
                   ],
                   type: 'RpcResult<Balance>',
                 },
+                get_burn_amount: {
+                  description: '',
+                  params: [
+                    {
+                      name: 'first_asset_id',
+                      type: 'TokenId',
+                    },
+                    {
+                      name: 'second_asset_id',
+                      type: 'TokenId',
+                    },
+                    {
+                      name: 'liquidity_asset_amount',
+                      type: 'Balance',
+                    },
+                  ],
+                  type: 'RpcResult<Balance>',
+                },
               },
             },
             types: {
-
-              CurrencyIdOf: 'u32',
-              CurrencyId: 'u32',
-              App: {
-                _enum: [
-                  'ETH',
-                  'ERC20'
-                ]
-              },
-
+              CurrencyIdOf: "u32",
+              CurrencyId: "u32",
               Balance: 'u128',
-
-              RpcResult: {
-                price: 'Balance'
+              App: {
+                  _enum: [
+                      'ETH',
+                      'ERC20'
+                  ]
               },
-
+        
+              RpcResult: {
+                  price: 'Balance'
+              },
+        
               // mapping the actual specified address format
               Address: 'AccountId',
               // mapping the lookup
               LookupSource: 'AccountId',
-
+        
               AssetInfo: {
                 name: 'Option<Vec<u8>>',
                 symbol: 'Option<Vec<u8>>',
                 description: 'Option<Vec<u8>>',
                 decimals: 'Option<u32>',
               },
-
+        
               AppId: '[u8; 20]',
               Message: {
                 payload: 'Vec<u8>',
@@ -98,10 +114,12 @@ class SubClient {
                 blockNumber: 'u64',
                 eventIndex: 'u32',
               },
-              TokenId: 'H160',
+              TokenId: 'u32',
               BridgedAssetId: 'H160',
-              AssetAccountData: {
-                free: 'U256',
+              AccountData: {
+                free: 'u128',
+                reserved: 'u128',
+                frozen: 'u128',
               },
               EthereumHeader: {
                 parentHash: 'H256',
