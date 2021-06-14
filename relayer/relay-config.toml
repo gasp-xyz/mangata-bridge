@@ -2,15 +2,15 @@
 endpoint = "wss://kovan.infura.io/ws/v3/3592e9c20d9b4169a394a608a310c85f"
 
 [ethereum.bridge]
-address = "0x1786F80393A229f7A472672eC52f742019e0cd46"
+address = "0xb9A469F82C1c39a3A4BCE872adA6297f8d697A8a"
 abi = "/tmp/contracts/Bridge.json"
 
 [ethereum.apps.eth]
-address = "0xDd514baA317bF095ddBa2C0a847765fEb389c6a0"
+address = "0xF6c4D8E8C65c267bFADE16A95978Da85743C950D"
 abi = "/tmp/contracts/ETHApp.json"
 
 [ethereum.apps.erc20]
-address = "0x00e392C04743359e39f00CD268A5390D27Ef6b44"
+address = "0x24FC6d717C4864BEE368e63dE9edb5276C263F7a"
 abi = "/tmp/contracts/ERC20App.json"
 
 [substrate]
