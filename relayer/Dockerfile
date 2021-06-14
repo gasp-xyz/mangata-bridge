@@ -16,9 +16,8 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends apt-utils \
     && apt-get install -y ca-certificates
 USER 1001
+
 # RUN sed -i 's/.\/contracts\//\/tmp\/contracts\//g' /tmp/relay-config.toml
 # RUN cat /tmp/relay-config.toml
-
-ENV ARTEMIS_SUBSTRATE_KEY=//Relay
 
 ENTRYPOINT ["/usr/local/bin/artemis-relay"]
