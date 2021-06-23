@@ -35,6 +35,11 @@ class EthClient {
 			return userAccount.address;
 		};
 
+		async getDefaultAccount() {
+			var defaultAccount = this.web3.eth.accounts.privateKeyToAccount("0x8942a0094dfda5c7d40db448588ffb58513802f7c48edaded7bf6157f026567d");
+			return defaultAccount.address;
+		};
+
     async initialize() {
       // this.accounts[0] =
 			// await this.web3.eth.accounts.privateKeyToAccount("0x62e5c324be3b4a5dc690d66f43f033bb048a3ffb645a8973cb45b436698e27cd");
@@ -91,7 +96,8 @@ class EthClient {
       const erc20Instance = this.loadERC20Contract(address);
       return erc20Instance.methods.approve(this.appERC20._address, this.web3.utils.toBN(amount))
         .send({
-          from
+          from: from,
+	        gas: 500000
         });
     }
 
@@ -100,7 +106,8 @@ class EthClient {
 
       return await this.appERC20.methods.sendERC20(recipientBytes, address, this.web3.utils.toBN(amount))
         .send({
-          from
+          from: from,
+	        gas: 500000
         });
     }
 }
