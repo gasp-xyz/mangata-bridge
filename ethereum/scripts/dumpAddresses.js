@@ -19,7 +19,7 @@ module.exports = async () => {
             MangataToken: mangataTokenInstance.address
         }
 
-        fs.writeFileSync("../test/build/address.json", JSON.stringify(address, null, 2))
+        fs.writeFileSync("../deploy-bridge/build/address.json", JSON.stringify(address, null, 2))
 
     } catch (error) {
         return console.error({error})

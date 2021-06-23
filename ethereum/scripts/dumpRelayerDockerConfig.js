@@ -10,7 +10,7 @@ const Bridge = artifacts.require("Bridge")
 const ETHApp = artifacts.require("ETHApp")
 const ERC20App = artifacts.require("ERC20App")
 
-const CONFIG_DIR = "../test/build/relayer-config"
+const CONFIG_DIR = "../deploy-bridge/build/relayer-config"
 
 
 const dump = async (bridge, ethApp, erc20App) => {
