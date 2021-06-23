@@ -40,36 +40,36 @@ describe('Bridge', function () {
   });
 
   describe('ETH App', function () {
-    it('should transfer ETH from Ethereum to Substrate', async function() {
-      let amount = BigNumber('10000000000000000'); // 0.01 ETH
-
-      let beforeEthBalance = await ethClient.getEthBalance(await ethClient.getUserAccount());
-      let beforeSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, ETH_ASSET_ID);
-
-      let { gasCost } = await ethClient.sendEth(await ethClient.getUserAccount(), amount, polkadotRecipient);
-      await sleep(30000);
-
-      let afterEthBalance = await ethClient.getEthBalance(await ethClient.getUserAccount());
-      let afterSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, ETH_ASSET_ID);
-
-      expect(beforeEthBalance.minus(afterEthBalance)).to.be.bignumber.equal(amount.plus(gasCost));
-      expect(afterSubBalance.minus(beforeSubBalance)).to.be.bignumber.equal(amount);
-
-      // conservation of value
-      expect(beforeEthBalance.plus(beforeSubBalance)).to.be.bignumber.equal(afterEthBalance.plus(afterSubBalance).plus(gasCost))
-    });
+    // it('should transfer ETH from Ethereum to Substrate', async function() {
+    //   let amount = BigNumber('10000000000000000'); // 0.01 ETH
+		//
+    //   let beforeEthBalance = await ethClient.getEthBalance(await ethClient.getUserAccount());
+    //   let beforeSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, ETH_ASSET_ID);
+		//
+    //   let { gasCost } = await ethClient.sendEth(await ethClient.getUserAccount(), amount, polkadotRecipient);
+    //   await sleep(30000);
+		//
+    //   let afterEthBalance = await ethClient.getEthBalance(await ethClient.getUserAccount());
+    //   let afterSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, ETH_ASSET_ID);
+		//
+    //   expect(beforeEthBalance.minus(afterEthBalance)).to.be.bignumber.equal(amount.plus(gasCost));
+    //   expect(afterSubBalance.minus(beforeSubBalance)).to.be.bignumber.equal(amount);
+		//
+    //   // conservation of value
+    //   expect(beforeEthBalance.plus(beforeSubBalance)).to.be.bignumber.equal(afterEthBalance.plus(afterSubBalance).plus(gasCost))
+    // });
 
     // it('should transfer ETH from Substrate to Ethereum', async function () {
 		//
     //   let amount = BigNumber('10000000000000000'); // 0.01 ETH
 		//
-    //   let beforeEthBalance = await ethClient.getEthBalance(ethClient.accounts[1]);
+    //   let beforeEthBalance = await ethClient.getEthBalance(await ethClient.getUserAccount());
     //   let beforeSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, ETH_ASSET_ID);
 		//
-    //   await subClient.burnETH(subClient.alice, ethClient.accounts[1], amount.toFixed())
-    //   await sleep(30000);
+    //   await subClient.burnETH(subClient.alice, await ethClient.getUserAccount(), amount.toFixed())
+    //   await sleep(90000);
 		//
-    //   let afterEthBalance = await ethClient.getEthBalance(ethClient.accounts[1]);
+    //   let afterEthBalance = await ethClient.getEthBalance(await ethClient.getUserAccount());
     //   let afterSubBalance = await subClient.queryAccountBalance(polkadotRecipientSS58, ETH_ASSET_ID);
 		//
     //   expect(afterEthBalance.minus(beforeEthBalance)).to.be.bignumber.equal(amount);
