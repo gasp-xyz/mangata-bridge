@@ -1,25 +1,5 @@
 version: "3.8"
-
 services:
-
-  # Ethereum
-  ganache:
-    image: trufflesuite/ganache-cli
-    command: >
-      --port=8545
-      --blockTime=0
-      --db=/opt/ganache-db
-      --networkId=344
-      --mnemonic='stone speak what ritual switch pigeon weird dutch burst shaft nature shove'
-    ports:
-      - "8545:8545"
-    volumes:
-      - type: volume
-        source: ganache-db
-        target: /opt/ganache-db
-        volume:
-          nocopy: true
-
   # Parachain
   parachain:
     image: mangata/mangata-node:latest
@@ -31,10 +11,28 @@ services:
     env_file: ./build/parachain.env
     volumes:
       - ../../mangata-node/:/var/docker/mangata-custom-node
+      - ./build/mangataSpec.json:/var/docker/config/mangataSpec.json
       - type: bind
         source: ./build/parachain-state/
         target: /root/.local
-    command: bash -c "./target/release/mangata-node --alice --base-path /root/.local --chain local --rpc-cors all --ws-external"
+    command: "bash -c './target/release/mangata-node build-spec --chain=../config/mangataSpec.json --raw > ../config/mangataSpecRaw.json && ./target/release/mangata-node --alice --base-path /root/.local --rpc-cors all --ws-external --chain=../config/mangataSpecRaw.json'"
+  # Ethereum
+  # ganache:
+  #   image: trufflesuite/ganache-cli
+  #   command: >
+  #     --port=8545
+  #     --blockTime=0
+  #     --db=/opt/ganache-db
+  #     --networkId=344
+  #     --mnemonic='stone speak what ritual switch pigeon weird dutch burst shaft nature shove'
+  #   ports:
+  #     - "8545:8545"
+  #   volumes:
+  #     - type: volume
+  #       source: ganache-db
+  #       target: /opt/ganache-db
+  #       volume:
+  #         nocopy: true
 
   # Relayer
   relayer:
@@ -52,6 +50,6 @@ services:
         source: ./build/relayer-config
         target: /opt/config
 
-
-volumes:
-    ganache-db:
+#
+# volumes:
+#     ganache-db:

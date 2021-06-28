@@ -25,11 +25,8 @@ module.exports = {
     },
     kovan: {
       provider: () => new HDWalletProvider(
-					// TODO Fix this
-          // process.env.MNEMONIC,
-          // "https://kovan.infura.io/v3/".concat(process.env.INFURA_PROJECT_ID)
-					"gorilla emotion rare lunar solid install sand burden october supreme breeze wool",
-          "https://kovan.infura.io/v3/".concat('e8b4790b8e4049cca3c04f738cfa25f2')
+          process.env.MNEMONIC,
+          "https://kovan.infura.io/v3/".concat(process.env.INFURA_PROJECT_ID)
       ),
       network_id: 42,
       gas: 6000000,

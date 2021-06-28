@@ -1,0 +1,56 @@
+#!/bin/bash
+# config_init
+
+set -e
+
+# Seed/security phrase for depolying account
+MGA_Kovan_Bridge_MNEMONIC="dynamic lion immense invite hub crowd sun almost seven just drift illegal"
+
+
+KOVAN_INFURA_PROJECT_ID="e8b4790b8e4049cca3c04f738cfa25f2"
+
+# INFURA Project Id for Kovan
+MGA_Kovan_Bridge_INFURA_ENDPOINT_HTTPS="https://kovan.infura.io/v3/$KOVAN_INFURA_PROJECT_ID"
+MGA_Kovan_Bridge_INFURA_ENDPOINT_WS="wss://kovan.infura.io/v3/$KOVAN_INFURA_PROJECT_ID"
+
+MGA_Kovan_Bridge_SUB_ENDPOINT="ws://localhost:9944"
+
+# ETH truffle path
+ETH_TRUFFLE_PATH="../../ethereum"
+
+# Basepath for build in relation to ethereum path
+DEPLOY_BRIDGE_PATH="../deploy-bridge"
+
+SUB_DIR="../../mangata-node/"
+
+SUB_COMMAND="bash -c './target/release/mangata-node build-spec --chain=../config/mangataSpec.json --raw > ../config/mangataSpecRaw.json && ./target/release/mangata-node --alice --base-path /root/.local --rpc-cors all --ws-external --chain=../config/mangataSpecRaw.json'"
+
+SUB_CHAIN_PORTS="[\"9944:9944\"]"
+
+SUB_CHAIN_RECEIPIENT="0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d"
+SUB_CHAIN_RECEIPIENTSS58="5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY"
+
+
+touch "$ETH_TRUFFLE_PATH/.env"
+
+echo "MNEMONIC=$MGA_Kovan_Bridge_MNEMONIC" > "$ETH_TRUFFLE_PATH/.env"
+echo "INFURA_PROJECT_ID=$KOVAN_INFURA_PROJECT_ID" >> "$ETH_TRUFFLE_PATH/.env"
+echo "BASE_PATH=$DEPLOY_BRIDGE_PATH" >> "$ETH_TRUFFLE_PATH/.env"
+echo "ETH_ENDPOINT=$MGA_Kovan_Bridge_INFURA_ENDPOINT_HTTPS" >> "$ETH_TRUFFLE_PATH/.env"
+echo "SUB_ENDPOINT=$MGA_Kovan_Bridge_SUB_ENDPOINT" >> "$ETH_TRUFFLE_PATH/.env"
+
+touch "../.env"
+
+echo "SUB_CHAIN_RECEIPIENT=$SUB_CHAIN_RECEIPIENT" > "../.env"
+echo "SUB_CHAIN_RECEIPIENTSS58=$SUB_CHAIN_RECEIPIENTSS58" >> "../.env"
+echo "ETH_ENDPOINT=$MGA_Kovan_Bridge_INFURA_ENDPOINT_HTTPS" >> "../.env"
+echo "SUB_ENDPOINT=$MGA_Kovan_Bridge_SUB_ENDPOINT" >> "../.env"
+
+
+yq e ".services.parachain.ports = $SUB_CHAIN_PORTS | .services.parachain.ports[0] style=\"double\"" -i ../docker-compose.yml
+yq e ".services.parachain.volumes[0]=\"$SUB_DIR:/var/docker/mangata-custom-node\"" -i ../docker-compose.yml
+yq e ".services.parachain.volumes[1]=\"./build/mangataSpec.json:/var/docker/config/mangataSpec.json\"" -i ../docker-compose.yml
+yq e ".services.parachain.command=\"$SUB_COMMAND\"" -i ../docker-compose.yml
+
+# deploy
+./deploy.sh "$MGA_Kovan_Bridge_MNEMONIC" "$MGA_Kovan_Bridge_INFURA_ENDPOINT_HTTPS"
