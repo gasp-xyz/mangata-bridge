@@ -39,10 +39,9 @@ module.exports.transferEthAndDumpKeys = async function (fromAccSeed, ethEndpoint
       privateKey0
    );
 
-	 // TODO Uncomment
-   // const createReceipt = await web3.eth.sendSignedTransaction(
-   //    createTransaction.rawTransaction
-   // );
+   const createReceipt = await web3.eth.sendSignedTransaction(
+      createTransaction.rawTransaction
+   );
    console.log(
       `Transaction successful`
    );

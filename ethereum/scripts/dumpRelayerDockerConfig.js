@@ -22,6 +22,10 @@ const dump = async (bridge, ethApp, erc20App) => {
     let ethAbiFile = path.join(CONFIG_DIR, "ETHApp.json")
     let erc20AbiFile = path.join(CONFIG_DIR, "ERC20App.json")
 
+		console.log(bridge.abi)
+		console.log(bridgeAbiFile)
+		console.log(JSON.stringify(bridge.abi, null, 2))
+
     fs.writeFileSync(bridgeAbiFile, JSON.stringify(bridge.abi, null, 2))
     fs.writeFileSync(ethAbiFile, JSON.stringify(ethApp.abi, null, 2))
     fs.writeFileSync(erc20AbiFile, JSON.stringify(erc20App.abi, null, 2))
