@@ -10,7 +10,7 @@ module.exports = async (callback) => {
         let ethApp = await ETHApp.deployed()
         let erc20App = await ERC20App.deployed()
 
-        fs.writeFileSync(path.join(process.env.BASE_PATH,"/build/parachain.env"), `ETH_APP_ID=${ethApp.address}\nERC20_APP_ID=${erc20App.address}\n`)
+        fs.writeFileSync(path.join(process.env.BRIDGE_PATH,"/build/parachain.env"), `ETH_APP_ID=${ethApp.address}\nERC20_APP_ID=${erc20App.address}\n`)
 				callback();
     } catch (error) {
         callback(error)

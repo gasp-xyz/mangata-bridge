@@ -12,8 +12,8 @@ touch build/parachain.env
 pushd ../ethereum
 
 # TODO Uncomment
-# Deploy contracts
-# truffle deploy --reset --network kovan
+truffle deploy --reset --network kovan
+# truffle deploy --network kovan
 
 # Generate configuration for relayer, parachain, and tests
 truffle exec scripts/dumpRelayerDockerConfig.js --network kovan
@@ -32,23 +32,16 @@ mangataTokenAddress=`jq .MangataToken ../build/address.json`
 pushd hex2bytes
 ethAppAddressBytes=`eval "cargo run ethAppAddress $ethAppAddress" | tr -d '"'`
 ERC20AppAddressBytes=`eval "cargo run ERC20AppAddress $ERC20AppAddress" | tr -d '"'`
-mangataTokenAddressBytes=`eval "cargo run mangataTokenAddress $mangataTokenAddress" | tr -d '"'`
 popd
 
+echo $ethAppAddressBytes
+echo $ERC20AppAddressBytes
+echo $mangataTokenAddress
+echo "Please update deploy-bridge/deploy/mangataSpec.json with the above values."
+read -n1 -r -p "Press any key to continue:" dummyInput
 
 
-jq --raw-output ".genesis.runtime.bridge.bridgedAppIdRegistry[0][0] = \"ETH\"" ./mangataSpec.json > ./tmp.mangataSpec.json && mv ./tmp.mangataSpec.json ./mangataSpec.json
-jq --raw-output ".genesis.runtime.bridge.bridgedAppIdRegistry[1][0] = \"ERC20\"" ./mangataSpec.json > ./tmp.mangataSpec.json && mv ./tmp.mangataSpec.json ./mangataSpec.json
-jq --raw-output --arg ethAppAddressBytes "$ethAppAddressBytes" ".genesis.runtime.bridge.bridgedAppIdRegistry[0][1] = $ethAppAddressBytes" ./mangataSpec.json > ./tmp.mangataSpec.json && mv ./tmp.mangataSpec.json ./mangataSpec.json
-jq --raw-output --arg ERC20AppAddressBytes "$ERC20AppAddressBytes" ".genesis.runtime.bridge.bridgedAppIdRegistry[1][1] = $ERC20AppAddressBytes" ./mangataSpec.json > ./tmp.mangataSpec.json && mv ./tmp.mangataSpec.json ./mangataSpec.json
-
-# TODO add code to change MGA token as well in chain spec
-
-# echo $ethAppAddressBytes
-# echo $ERC20AppAddressBytes
-# echo $mangataTokenAddressBytes
-
-cp ./mangataSpec.json ../build/
+cp ./mangataSpec.json ../build/mangataSpec.json
 popd
 
 # Start Parachain

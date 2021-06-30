@@ -12,8 +12,8 @@ const ETHApp = artifacts.require("ETHApp")
 const ERC20App = artifacts.require("ERC20App")
 
 
-const CONFIG_DIR = path.join(process.env.BASE_PATH,"/build/relayer-config")
-
+const CONFIG_DIR = path.join(process.env.BRIDGE_PATH,"/build/relayer-config")
+console.log(CONFIG_DIR)
 
 const dump = async (bridge, ethApp, erc20App) => {
     await fs.promises.mkdir(CONFIG_DIR, { recursive: true });
@@ -27,7 +27,7 @@ const dump = async (bridge, ethApp, erc20App) => {
     fs.writeFileSync(erc20AbiFile, JSON.stringify(erc20App.abi, null, 2))
     const config = {
         ethereum: {
-            endpoint: process.env.ETH_ENDPOINT,
+            endpoint: process.env.ETH_ENDPOINT_WS,
             bridge: {
                 address: bridge.address,
                 abi: "/opt/config/Bridge.json",
@@ -44,7 +44,7 @@ const dump = async (bridge, ethApp, erc20App) => {
             }
         },
         substrate: {
-            endpoint: process.env.SUB_ENDPOINT
+            endpoint: process.env.SUB_ENDPOINT_WS
         }
     }
     fs.writeFileSync(path.join(CONFIG_DIR, "config.toml"), TOML.stringify(config))

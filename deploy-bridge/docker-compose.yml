@@ -15,7 +15,7 @@ services:
       - type: bind
         source: ./build/parachain-state/
         target: /root/.local
-    command: "bash -c './target/release/mangata-node build-spec --chain=../config/mangataSpec.json --raw > ../config/mangataSpecRaw.json && ./target/release/mangata-node --alice --base-path /root/.local --rpc-cors all --ws-external --chain=../config/mangataSpecRaw.json'"
+    command: "bash -c './target/release/mangata-node build-spec --chain=../config/mangataSpec.json --raw > ../config/mangataSpecRaw.json && ./target/release/mangata-node --alice --base-path /root/.local --rpc-cors all --ws-external --rpc-external --chain=../config/mangataSpecRaw.json'"
   # Ethereum
   # ganache:
   #   image: trufflesuite/ganache-cli
@@ -52,4 +52,4 @@ services:
 
 #
 # volumes:
-#     ganache-db:
+#     db:

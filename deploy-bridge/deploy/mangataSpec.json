@@ -38,59 +38,59 @@
         "balances": [
           [
             "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY",
-            1152921504606847000
+            1152921504606846976
           ],
           [
             "5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty",
-            1152921504606847000
+            1152921504606846976
           ],
           [
             "5FLSigC9HGRKVhB9FiEo4Y3koPsNmBmLJbpXg2mp1hXcS59Y",
-            1152921504606847000
+            1152921504606846976
           ],
           [
             "5DAAnrj7VHTznn2AWBemMuyBwZWs6FNFjdyVXUeYum3PTXFy",
-            1152921504606847000
+            1152921504606846976
           ],
           [
             "5HGjWAeFDfFCWPsjFQdVV2Msvz2XtMktvgocEZcCj68kUMaw",
-            1152921504606847000
+            1152921504606846976
           ],
           [
             "5CiPPseXPECbkjWCa6MnjNokrgYjMqmKndv2rSnekmSK2DjL",
-            1152921504606847000
+            1152921504606846976
           ],
           [
             "5GNJqTPyNqANBkUVMN1LPPrxXnFouWXoe2wNSmmEoLctxiZY",
-            1152921504606847000
+            1152921504606846976
           ],
           [
             "5HpG9w8EBLe5XCrbczpwq5TSXvedjrBGCwqxK1iQ7qUsSWFc",
-            1152921504606847000
+            1152921504606846976
           ],
           [
             "5Ck5SLSHYac6WFt5UZRSsdJjwmpSZq85fd5TRNAdZQVzEAPT",
-            1152921504606847000
+            1152921504606846976
           ],
           [
             "5HKPmK9GYtE1PSLsS1qiYU9xQ9Si1NcEhdeCq9sw5bqu4ns8",
-            1152921504606847000
+            1152921504606846976
           ],
           [
             "5FCfAonRZgTFrTd9HREEyeJjDpT397KMzizE6T3DvebLFE7n",
-            1152921504606847000
+            1152921504606846976
           ],
           [
             "5CRmqmsiNFExV6VbdmPJViVxrWmkaXXvBrSX8oqBT8R9vmWk",
-            1152921504606847000
+            1152921504606846976
           ],
           [
             "5Ggeh38xrCy49HYrh26QETuQmppaapygTLKQWds7upStaZYK",
-            1152921504606847000
+            1152921504606846976
           ],
           [
             "5HQ9Mm9L1HG53htEGDMsnhkkL7hEfF9vLstEQPtMLX5Gupqx",
-            1152921504606847000
+            1152921504606846976
           ]
         ]
       },
@@ -101,53 +101,11 @@
         "bridgedAppIdRegistry": [
           [
             "ETH",
-            [
-              197,
-              182,
-              111,
-              89,
-              228,
-              53,
-              134,
-              50,
-              28,
-              47,
-              136,
-              88,
-              35,
-              87,
-              64,
-              165,
-              70,
-              240,
-              160,
-              213
-            ]
+            [243, 25, 208, 142, 107, 127, 57, 158, 125, 28, 144, 252, 46, 209, 163, 201, 72, 184, 156, 135]
           ],
           [
             "ERC20",
-            [
-              245,
-              150,
-              72,
-              179,
-              178,
-              104,
-              27,
-              104,
-              67,
-              107,
-              148,
-              38,
-              151,
-              161,
-              114,
-              83,
-              122,
-              125,
-              46,
-              175
-            ]
+            [237, 16, 66, 222, 248, 91, 10, 9, 60, 14, 8, 58, 61, 100, 67, 209, 41, 116, 15, 58]
           ]
         ]
       },
@@ -158,8 +116,8 @@
         "bridgedAssetsLinks": [
           [
             0,
-            "0xf8f7758fbcefd546eaeff7de24aff666b6228e73",
-            1e+26,
+            "0x2417F2368c6b7D55409486a634ff024D0434Ed67",
+            100000000000000000000000000,
             "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY"
           ],
           [
@@ -245,12 +203,12 @@
           [
             "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY",
             2,
-            2e+22
+            20000000000000000000000
           ],
           [
             "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY",
             0,
-            1e+22
+            10000000000000000000000
           ]
         ]
       },
@@ -259,9 +217,9 @@
           [
             "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY",
             0,
-            1e+22,
+            10000000000000000000000,
             2,
-            2e+22,
+            20000000000000000000000,
             3
           ]
         ]
@@ -281,7 +239,7 @@
             "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY",
             "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY",
             3,
-            1e+22,
+            10000000000000000000000,
             "Validator"
           ]
         ]

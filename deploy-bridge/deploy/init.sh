@@ -4,26 +4,28 @@
 set -e
 
 # Seed/security phrase for depolying account
-MGA_Kovan_Bridge_MNEMONIC="dynamic lion immense invite hub crowd sun almost seven just drift illegal"
+MGA_Kovan_Bridge_MNEMONIC="gorilla emotion rare lunar solid install sand burden october supreme breeze wool"
 
 
 KOVAN_INFURA_PROJECT_ID="e8b4790b8e4049cca3c04f738cfa25f2"
 
 # INFURA Project Id for Kovan
 MGA_Kovan_Bridge_INFURA_ENDPOINT_HTTPS="https://kovan.infura.io/v3/$KOVAN_INFURA_PROJECT_ID"
-MGA_Kovan_Bridge_INFURA_ENDPOINT_WS="wss://kovan.infura.io/v3/$KOVAN_INFURA_PROJECT_ID"
+MGA_Kovan_Bridge_INFURA_ENDPOINT_WS="wss://kovan.infura.io/ws/v3/$KOVAN_INFURA_PROJECT_ID"
 
-MGA_Kovan_Bridge_SUB_ENDPOINT="ws://localhost:9944"
+MGA_Kovan_Bridge_SUB_ENDPOINT="ws://parachain:9944/"
 
 # ETH truffle path
 ETH_TRUFFLE_PATH="../../ethereum"
 
-# Basepath for build in relation to ethereum path
-DEPLOY_BRIDGE_PATH="../deploy-bridge"
+# Basepath for mangata-bridge
+BASE_PATH="$PWD/../.."
+
+BRIDGE_PATH="$BASE_PATH/deploy-bridge"
 
 SUB_DIR="../../mangata-node/"
 
-SUB_COMMAND="bash -c './target/release/mangata-node build-spec --chain=../config/mangataSpec.json --raw > ../config/mangataSpecRaw.json && ./target/release/mangata-node --alice --base-path /root/.local --rpc-cors all --ws-external --chain=../config/mangataSpecRaw.json'"
+SUB_COMMAND="bash -c './target/release/mangata-node build-spec --chain=../config/mangataSpec.json --raw > ../config/mangataSpecRaw.json && ./target/release/mangata-node --alice --base-path /root/.local --rpc-cors all --ws-external --rpc-external --chain=../config/mangataSpecRaw.json'"
 
 SUB_CHAIN_PORTS="[\"9944:9944\"]"
 
@@ -35,7 +37,7 @@ touch "$ETH_TRUFFLE_PATH/.env"
 
 echo "MNEMONIC=$MGA_Kovan_Bridge_MNEMONIC" > "$ETH_TRUFFLE_PATH/.env"
 echo "INFURA_PROJECT_ID=$KOVAN_INFURA_PROJECT_ID" >> "$ETH_TRUFFLE_PATH/.env"
-echo "BASE_PATH=$DEPLOY_BRIDGE_PATH" >> "$ETH_TRUFFLE_PATH/.env"
+echo "BRIDGE_PATH=$BRIDGE_PATH" >> "$ETH_TRUFFLE_PATH/.env"
 echo "ETH_ENDPOINT=$MGA_Kovan_Bridge_INFURA_ENDPOINT_HTTPS" >> "$ETH_TRUFFLE_PATH/.env"
 echo "SUB_ENDPOINT=$MGA_Kovan_Bridge_SUB_ENDPOINT" >> "$ETH_TRUFFLE_PATH/.env"
 
@@ -43,8 +45,8 @@ touch "../.env"
 
 echo "SUB_CHAIN_RECEIPIENT=$SUB_CHAIN_RECEIPIENT" > "../.env"
 echo "SUB_CHAIN_RECEIPIENTSS58=$SUB_CHAIN_RECEIPIENTSS58" >> "../.env"
-echo "ETH_ENDPOINT=$MGA_Kovan_Bridge_INFURA_ENDPOINT_HTTPS" >> "../.env"
-echo "SUB_ENDPOINT=$MGA_Kovan_Bridge_SUB_ENDPOINT" >> "../.env"
+echo "ETH_ENDPOINT_WS=$MGA_Kovan_Bridge_INFURA_ENDPOINT_HTTPS" >> "../.env"
+echo "SUB_ENDPOINT_WS=$MGA_Kovan_Bridge_SUB_ENDPOINT" >> "../.env"
 
 
 yq e ".services.parachain.ports = $SUB_CHAIN_PORTS | .services.parachain.ports[0] style=\"double\"" -i ../docker-compose.yml
