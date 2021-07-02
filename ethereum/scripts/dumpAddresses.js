@@ -21,7 +21,7 @@ module.exports = async (callback) => {
             MangataToken: mangataTokenInstance.address
         }
 
-        fs.writeFileSync(path.join(process.env.BRIDGE_PATH,"/build/address.json"), JSON.stringify(address, null, 2))
+        fs.writeFileSync(path.join(process.env.BRIDGE_DEPLOY_PATH,"/build/address.json"), JSON.stringify(address, null, 2))
 				callback();
     } catch (error) {
         return console.error({error})

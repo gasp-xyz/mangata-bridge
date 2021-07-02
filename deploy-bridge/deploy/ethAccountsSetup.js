@@ -8,13 +8,10 @@ module.exports.transferEthAndDumpKeys = async function (fromAccSeed, ethEndpoint
       `Attempting to make transaction of 1 ETH using ${fromAccSeed}`
    );
    var web3 = new Web3(new Web3.providers.HttpProvider(ethEndpoint))
-	 console.log(typeof fromAccSeed);
 
     let hdwallet = hdkey.fromMasterSeed(await bip39.mnemonicToSeed(fromAccSeed));
     let wallet_hdpath0 = "m/44'/60'/0'/0/0";
 		let wallet_hdpath1 = "m/44'/60'/0'/0/1";
-
-		console.log(hdwallet);
 
 		let wallet0 = hdwallet.derivePath(wallet_hdpath0).getWallet();
     let address0 = '0x' + wallet0.getAddress().toString("hex");
