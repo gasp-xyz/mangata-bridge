@@ -35,3 +35,11 @@ To test out and use the bridge, see each of the above READMEs in order and run t
 The security policy and procedures can be found in SECURITY.md.
 
 Current version is for testnet purposes only, security is not guaranteed.
+
+## Deploying the bridge on Kovan
+
+This folder includes the automated scripts used to deploy the bridge on Kovan.
+
+See [/deploy-bridge/steps-to-deploy-bridge.md](/deploy-bridge/steps-to-deploy-bridge.md)
+
+
