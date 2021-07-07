@@ -7,3 +7,4 @@ yarn.lock
 deploy-bridge/build
 deploy-bridge/node_modules
 deploy-bridge/deploy/hex2bytes/target
+*.env

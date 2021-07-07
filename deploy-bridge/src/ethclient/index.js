@@ -1,6 +1,8 @@
 require("dotenv").config();
 const Web3 = require('web3');
 const BigNumber = require('bignumber.js');
+const bip39 = require("bip39");
+const hdkey = require('ethereumjs-wallet/hdkey');
 
 const ETHApp = require('../../../ethereum/build/contracts/ETHApp.json');
 const ERC20App = require('../../../ethereum/build/contracts/ERC20App.json');
@@ -13,7 +15,7 @@ class EthClient {
 
     constructor(endpoint, ethAppAddress, erc20AppAddress) {
 			console.log(endpoint);
-      var web3 = new Web3(new Web3.providers.HttpProvider(endpoint));
+      var web3 = new Web3(new Web3.providers.WebsocketProvider(endpoint));
       this.web3 = web3;
 
       this.loadApplicationContracts(ethAppAddress, erc20AppAddress);
@@ -32,19 +34,47 @@ class EthClient {
     }
 
 		async getUserAccount() {
-			var userAccount = this.web3.eth.accounts.privateKeyToAccount(process.env.ethPrivateKey1);
+			let hdwallet = hdkey.fromMasterSeed(await bip39.mnemonicToSeed(process.env.MGA_Kovan_Bridge_MNEMONIC));
+      let wallet_hdpath1 = "m/44'/60'/0'/0/1";
+   
+      let wallet1 = hdwallet.derivePath(wallet_hdpath1).getWallet();
+      // let address1 = '0x' + wallet1.getAddress().toString("hex");
+      let privateKey1 = wallet1.getPrivateKey().toString("hex");
+
+      var userAccount = this.web3.eth.accounts.privateKeyToAccount(privateKey1);
 			this.web3.eth.accounts.wallet.add(userAccount);
 			return userAccount.address;
 		};
 
 		async getDefaultAccount() {
-			var defaultAccount = this.web3.eth.accounts.privateKeyToAccount(process.env.ethPrivateKey0);
+      let hdwallet = hdkey.fromMasterSeed(await bip39.mnemonicToSeed(process.env.MGA_Kovan_Bridge_MNEMONIC));
+      let wallet_hdpath0 = "m/44'/60'/0'/0/0";
+
+      let wallet0 = hdwallet.derivePath(wallet_hdpath0).getWallet();
+      // let address0 = '0x' + wallet0.getAddress().toString("hex");
+      let privateKey0 = wallet0.getPrivateKey().toString("hex");
+
+			var defaultAccount = this.web3.eth.accounts.privateKeyToAccount(privateKey0);
 			return defaultAccount.address;
 		};
 
     async initialize() {
-			var defaultAccount = this.web3.eth.accounts.privateKeyToAccount(process.env.ethPrivateKey0);
+      let hdwallet = hdkey.fromMasterSeed(await bip39.mnemonicToSeed(process.env.MGA_Kovan_Bridge_MNEMONIC));
+      let wallet_hdpath0 = "m/44'/60'/0'/0/0";
+      let wallet_hdpath1 = "m/44'/60'/0'/0/1";
+ 
+      let wallet0 = hdwallet.derivePath(wallet_hdpath0).getWallet();
+      // let address0 = '0x' + wallet0.getAddress().toString("hex");
+      let privateKey0 = wallet0.getPrivateKey().toString("hex");
+ 
+      let wallet1 = hdwallet.derivePath(wallet_hdpath1).getWallet();
+      // let address1 = '0x' + wallet1.getAddress().toString("hex");
+      let privateKey1 = wallet1.getPrivateKey().toString("hex");
+
+			var defaultAccount = this.web3.eth.accounts.privateKeyToAccount(privateKey0);
 			this.web3.eth.accounts.wallet.add(defaultAccount);
+      var userAccount = this.web3.eth.accounts.privateKeyToAccount(privateKey1);
+			this.web3.eth.accounts.wallet.add(userAccount);
 			this.web3.eth.defaultAccount = defaultAccount.address;
     };
 

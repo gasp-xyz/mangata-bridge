@@ -33,10 +33,9 @@ describe('Bridge', function () {
     this.tokenAddress = addrs.TestToken;
     this.mngAddress = addrs.MangataToken;
 
-		console.log(process.env.SUB_ENDPOINT);
 
-    ethClient = new EthClient(await process.env.ETH_ENDPOINT, this.ethAppAddress, this.erc20AppAddress);
-    subClient = new SubClient(process.env.SUB_ENDPOINT);
+    ethClient = new EthClient(await process.env.MGA_Kovan_Bridge_INFURA_ENDPOINT_WS, this.ethAppAddress, this.erc20AppAddress);
+    subClient = new SubClient(process.env.MGA_Kovan_Bridge_SUB_ENDPOINT);
     await subClient.connect();
     await ethClient.initialize();
 

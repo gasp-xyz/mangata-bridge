@@ -9,10 +9,10 @@ yarn install
 docker build -f ./Dockerfile -t mangata/mangata-node .
 
 #from /test
-echo "BRIDGE_DEPLOY_PATH=$PWD" > ./setup/.ethereumenv
-echo "ETH_ENDPOINT_WS=ws://ganache:8545/" >> ./setup/.ethereumenv
-echo "SUB_ENDPOINT_WS=ws://parachain:9944/" >> ./setup/.ethereumenv
-cp ./setup/.ethereumenv ../ethereum/.env
+export BRIDGE_DEPLOY_PATH=$PWD
+export ETH_ENDPOINT_WS=ws://ganache:8545/
+export SUB_ENDPOINT_WS=ws://parachain:9944/
+
 
 # from /test/
 docker-compose down -v && sudo rm -rf ./build/parachain-state/* && ./tools/start-services.sh && yarn test

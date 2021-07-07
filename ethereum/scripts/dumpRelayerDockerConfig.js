@@ -13,7 +13,7 @@ const ERC20App = artifacts.require("ERC20App")
 
 
 const CONFIG_DIR = path.join(process.env.BRIDGE_DEPLOY_PATH,"/build/relayer-config")
-console.log(CONFIG_DIR)
+
 
 const dump = async (bridge, ethApp, erc20App) => {
     await fs.promises.mkdir(CONFIG_DIR, { recursive: true });
@@ -21,14 +21,11 @@ const dump = async (bridge, ethApp, erc20App) => {
     let bridgeAbiFile = path.join(CONFIG_DIR, "Bridge.json")
     let ethAbiFile = path.join(CONFIG_DIR, "ETHApp.json")
     let erc20AbiFile = path.join(CONFIG_DIR, "ERC20App.json")
-
-		console.log(bridge.abi)
-		console.log(bridgeAbiFile)
-		console.log(JSON.stringify(bridge.abi, null, 2))
-
+    
     fs.writeFileSync(bridgeAbiFile, JSON.stringify(bridge.abi, null, 2))
     fs.writeFileSync(ethAbiFile, JSON.stringify(ethApp.abi, null, 2))
     fs.writeFileSync(erc20AbiFile, JSON.stringify(erc20App.abi, null, 2))
+
     const config = {
         ethereum: {
             endpoint: process.env.ETH_ENDPOINT_WS,

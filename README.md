@@ -40,6 +40,6 @@ Current version is for testnet purposes only, security is not guaranteed.
 
 This folder includes the automated scripts used to deploy the bridge on Kovan.
 
-See [/deploy-bridge/steps-to-deploy-bridge.md](/deploy-bridge/steps-to-deploy-bridge.md)
+See [/deploy-bridge/README.md](/deploy-bridge/README.md)
 
 

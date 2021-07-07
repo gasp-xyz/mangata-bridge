@@ -11,45 +11,22 @@ services:
     env_file: ./build/parachain.env
     volumes:
       - ../../mangata-node/:/var/docker/mangata-custom-node
-      - ./build/mangataSpec.json:/var/docker/config/mangataSpec.json
+      - /home/striker/work/mangata-ws/mangata-bridge/deploy-bridge/build/mangataSpec.json:/var/docker/config/mangataSpec.json
       - type: bind
         source: ./build/parachain-state/
         target: /root/.local
     command: "bash -c './target/release/mangata-node build-spec --chain=../config/mangataSpec.json --raw > ../config/mangataSpecRaw.json && ./target/release/mangata-node --alice --base-path /root/.local --rpc-cors all --ws-external --rpc-external --chain=../config/mangataSpecRaw.json'"
-  # Ethereum
-  # ganache:
-  #   image: trufflesuite/ganache-cli
-  #   command: >
-  #     --port=8545
-  #     --blockTime=0
-  #     --db=/opt/ganache-db
-  #     --networkId=344
-  #     --mnemonic='stone speak what ritual switch pigeon weird dutch burst shaft nature shove'
-  #   ports:
-  #     - "8545:8545"
-  #   volumes:
-  #     - type: volume
-  #       source: ganache-db
-  #       target: /opt/ganache-db
-  #       volume:
-  #         nocopy: true
-
   # Relayer
   relayer:
     build:
       context: ../relayer
     depends_on:
-      # - ganache
       - parachain
     command: run --config /opt/config/config.toml
     environment:
-      ARTEMIS_ETHEREUM_KEY: "0x8942a0094dfda5c7d40db448588ffb58513802f7c48edaded7bf6157f026567d"
+      ARTEMIS_ETHEREUM_KEY: "8942a0094dfda5c7d40db448588ffb58513802f7c48edaded7bf6157f026567d"
       ARTEMIS_SUBSTRATE_KEY: "//Relay"
     volumes:
       - type: bind
         source: ./build/relayer-config
         target: /opt/config
-
-#
-# volumes:
-#     db:
