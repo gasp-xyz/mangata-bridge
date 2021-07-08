@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  # Parachain
+  parachain:
+    image: mangata/mangata-node:latest
+    working_dir: /var/docker/mangata-custom-node
+    ports:
+      - "9944:9944"
+    environment:
+      - CARGO_HOME=/var/docker/mangata-custom-node/.cargo
+    env_file: ./build/parachain.env
+    volumes:
+      - ../../mangata-node/:/var/docker/mangata-custom-node
+      - /home/striker/work/mangata-ws/mangata-bridge/deploy-bridge/build/mangataSpec.json:/var/docker/config/mangataSpec.json
+      - type: bind
+        source: ./build/parachain-state/
+        target: /root/.local
+    command: "bash -c './target/release/mangata-node build-spec --chain=../config/mangataSpec.json --raw > ../config/mangataSpecRaw.json && ./target/release/mangata-node --alice --base-path /root/.local --rpc-cors all --ws-external --rpc-external --chain=../config/mangataSpecRaw.json'"
+  # Relayer
+  relayer:
+    build:
+      context: ../relayer
+    depends_on:
+      - parachain
+    command: run --config /opt/config/config.toml
+    environment:
+      ARTEMIS_ETHEREUM_KEY: "8942a0094dfda5c7d40db448588ffb58513802f7c48edaded7bf6157f026567d"
+      ARTEMIS_SUBSTRATE_KEY: "//Relay"
+    volumes:
+      - type: bind
+        source: ./build/relayer-config
+        target: /opt/config
