@@ -5,47 +5,47 @@ set -e
 # config_init
 
 # Seed/security phrase for depolying account
-export MGA_Kovan_Bridge_MNEMONIC="gorilla emotion rare lunar solid install sand burden october supreme breeze wool"
+echo $MGA_Kovan_Bridge_MNEMONIC
 
 # INFURA Project Id for Kovan
-KOVAN_INFURA_PROJECT_ID="e8b4790b8e4049cca3c04f738cfa25f2"
+echo $KOVAN_INFURA_PROJECT_ID
 
 # INFURA endpoints
-MGA_Kovan_Bridge_INFURA_ENDPOINT_HTTPS="https://kovan.infura.io/v3/$KOVAN_INFURA_PROJECT_ID"
-export MGA_Kovan_Bridge_INFURA_ENDPOINT_WS="wss://kovan.infura.io/ws/v3/$KOVAN_INFURA_PROJECT_ID"
+echo $MGA_Kovan_Bridge_INFURA_ENDPOINT_HTTPS
+echo $MGA_Kovan_Bridge_INFURA_ENDPOINT_WS
 
 # Parachain endpoint
-export MGA_Kovan_Bridge_SUB_ENDPOINT="ws://parachain:9944/"
+echo $MGA_Kovan_Bridge_SUB_ENDPOINT
+echo $MGA_Kovan_Bridge_SUB_ENDPOINT_DOCKER
+
 
 # Exports for truffle
-export ETH_ENDPOINT_WS=$MGA_Kovan_Bridge_INFURA_ENDPOINT_WS
-export SUB_ENDPOINT_WS=$MGA_Kovan_Bridge_SUB_ENDPOINT
-export INFURA_PROJECT_ID=$KOVAN_INFURA_PROJECT_ID
-export -p MNEMONIC=$MGA_Kovan_Bridge_MNEMONIC
+echo $ETH_ENDPOINT_WS
+echo $SUB_ENDPOINT_WS
+echo $INFURA_PROJECT_ID
+echo $MNEMONIC
 
-# ETH truffle path
-ETH_TRUFFLE_PATH="../../ethereum"
+# Variables required to deploy a parachain container locally
+echo $SUB_DIR
+echo $SUB_COMMAND
+echo $SUB_CHAIN_PORTS
+
+
+# Variables determining the parachain user used for tests
+echo $SUB_CHAIN_RECEIPIENT
+echo $SUB_CHAIN_RECEIPIENTSS58
 
 # Basepath for mangata-bridge
 pushd ../../
 BASE_PATH="$PWD"
 popd
 
+# ETH truffle path
+ETH_TRUFFLE_PATH="$BASE_PATH//ethereum"
+
 # Path to deploy-bridge
 export BRIDGE_DEPLOY_PATH="$BASE_PATH/deploy-bridge"
 
-
-# Variables required to deploy a parachain container locally
-SUB_DIR="../../mangata-node/"
-
-SUB_COMMAND="bash -c './target/release/mangata-node build-spec --chain=../config/mangataSpec.json --raw > ../config/mangataSpecRaw.json && ./target/release/mangata-node --alice --base-path /root/.local --rpc-cors all --ws-external --rpc-external --chain=../config/mangataSpecRaw.json'"
-
-SUB_CHAIN_PORTS="[\"9944:9944\"]"
-
-
-# Variables determining the parachain user used for tests
-export SUB_CHAIN_RECEIPIENT="0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d"
-export SUB_CHAIN_RECEIPIENTSS58="5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY"
 
 # setup for docker-compose 
 yq e ".services.parachain.ports = $SUB_CHAIN_PORTS | .services.parachain.ports[0] style=\"double\"" -i ../docker-compose.yml

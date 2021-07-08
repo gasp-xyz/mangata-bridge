@@ -24,12 +24,14 @@ module.exports = {
     },
     kovan: {
       provider: () => new HDWalletProvider(
-          process.env.MNEMONIC,
-          "https://kovan.infura.io/v3/".concat(process.env.INFURA_PROJECT_ID)
+        process.env.MNEMONIC,
+        "wss://kovan.infura.io/ws/v3/".concat(process.env.INFURA_PROJECT_ID)
       ),
       network_id: 42,
       gas: 6000000,
-      gasPrice: 55000000000
+      gasPrice: 55000000000,
+      networkCheckTimeout: 999999,
+      websockets: true,
     }
   },
   mocha: {

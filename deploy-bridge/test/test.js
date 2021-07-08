@@ -1,4 +1,3 @@
-require("dotenv").config();
 const EthClient = require('../src/ethclient').EthClient;
 const SubClient = require('../src/subclient').SubClient;
 
@@ -18,6 +17,8 @@ describe('Bridge', function () {
   // Address for //Alice on Substrate
   const polkadotRecipient = process.env.SUB_CHAIN_RECEIPIENT;
   const polkadotRecipientSS58 = process.env.SUB_CHAIN_RECEIPIENTSS58;
+  console.log(polkadotRecipient);
+  console.log(polkadotRecipientSS58);
 
   const subNullRecipient = "0x0000000000000000000000000000000000000000";
 
@@ -33,8 +34,10 @@ describe('Bridge', function () {
     this.tokenAddress = addrs.TestToken;
     this.mngAddress = addrs.MangataToken;
 
+    console.log(process.env.MGA_Kovan_Bridge_INFURA_ENDPOINT_WS);
 
-    ethClient = new EthClient(await process.env.MGA_Kovan_Bridge_INFURA_ENDPOINT_WS, this.ethAppAddress, this.erc20AppAddress);
+
+    ethClient = new EthClient(process.env.MGA_Kovan_Bridge_INFURA_ENDPOINT_WS, this.ethAppAddress, this.erc20AppAddress);
     subClient = new SubClient(process.env.MGA_Kovan_Bridge_SUB_ENDPOINT);
     await subClient.connect();
     await ethClient.initialize();

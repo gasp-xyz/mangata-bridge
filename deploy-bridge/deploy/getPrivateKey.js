@@ -12,7 +12,5 @@ module.exports.getPrivateKeyFromSeed = async function (fromAccSeed, accNum) {
   let address = '0x' + wallet.getAddress().toString("hex");
   let privateKey = wallet.getPrivateKey().toString("hex");
 
-  return privateKey
-
-   
+  return privateKey   
 };

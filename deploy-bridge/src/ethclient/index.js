@@ -1,4 +1,3 @@
-require("dotenv").config();
 const Web3 = require('web3');
 const BigNumber = require('bignumber.js');
 const bip39 = require("bip39");
