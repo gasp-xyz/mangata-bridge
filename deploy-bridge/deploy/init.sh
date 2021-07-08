@@ -4,37 +4,6 @@ set -e
 
 # config_init
 
-# Seed/security phrase for depolying account
-echo $MGA_Kovan_Bridge_MNEMONIC
-
-# INFURA Project Id for Kovan
-echo $KOVAN_INFURA_PROJECT_ID
-
-# INFURA endpoints
-echo $MGA_Kovan_Bridge_INFURA_ENDPOINT_HTTPS
-echo $MGA_Kovan_Bridge_INFURA_ENDPOINT_WS
-
-# Parachain endpoint
-echo $MGA_Kovan_Bridge_SUB_ENDPOINT
-echo $MGA_Kovan_Bridge_SUB_ENDPOINT_DOCKER
-
-
-# Exports for truffle
-echo $ETH_ENDPOINT_WS
-echo $SUB_ENDPOINT_WS
-echo $INFURA_PROJECT_ID
-echo $MNEMONIC
-
-# Variables required to deploy a parachain container locally
-echo $SUB_DIR
-echo $SUB_COMMAND
-echo $SUB_CHAIN_PORTS
-
-
-# Variables determining the parachain user used for tests
-echo $SUB_CHAIN_RECEIPIENT
-echo $SUB_CHAIN_RECEIPIENTSS58
-
 # Basepath for mangata-bridge
 pushd ../../
 BASE_PATH="$PWD"
@@ -70,7 +39,7 @@ docker build -f ./Dockerfile -t mangata/mangata-node .
 
 # Transfer 1 eth from the 0th eth account (seed account) to 1st derived account this is required for tests
 # Also dump the private keys and addreses of these two accounts
-node -e "require(\"./ethAccountsSetup\").transferEth( '$MGA_Kovan_Bridge_MNEMONIC', '$MGA_Kovan_Bridge_INFURA_ENDPOINT_HTTPS').then(process.exit);"
+node -e "require(\"./ethAccountsSetup\").transferEth( '$MGA_Kovan_Bridge_MNEMONIC', '$MGA_Kovan_Bridge_INFURA_ENDPOINT_WS').then(process.exit);"
 
 # Set the 0th eth account as the one used by the relayer
 ethPrivateKey0=$(node -e "require(\"./getPrivateKey\").getPrivateKeyFromSeed( '$MGA_Kovan_Bridge_MNEMONIC', '0').then((x)=>{process.stdout.write(x);}).then(process.exit);")

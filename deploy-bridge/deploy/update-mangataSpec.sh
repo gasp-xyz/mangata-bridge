@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Get the relevant truffle contract details from env
 ethAppAddress=`jq .ETHApp ../build/address.json`
 ERC20AppAddress=`jq .ERC20App ../build/address.json`

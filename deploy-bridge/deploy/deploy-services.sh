@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 pushd ../
 # Terminate any running containers and remove parachain-state
 docker-compose down -v && sudo rm -rf ./build/parachain-state/*

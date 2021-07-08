@@ -5,7 +5,6 @@ export MGA_Kovan_Bridge_MNEMONIC="gorilla emotion rare lunar solid install sand 
 export KOVAN_INFURA_PROJECT_ID="44a296fce7bf4ad79e21b1c2002d34d1"
 
 # INFURA endpoints
-export MGA_Kovan_Bridge_INFURA_ENDPOINT_HTTPS="https://kovan.infura.io/v3/$KOVAN_INFURA_PROJECT_ID"
 export MGA_Kovan_Bridge_INFURA_ENDPOINT_WS="wss://kovan.infura.io/ws/v3/$KOVAN_INFURA_PROJECT_ID"
 
 # Parachain endpoint

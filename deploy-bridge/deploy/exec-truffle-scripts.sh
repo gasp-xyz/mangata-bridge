@@ -1,3 +1,7 @@
+#!/bin/bash
+
+set -e
+
 pushd ../../ethereum
 
 sleep 30s

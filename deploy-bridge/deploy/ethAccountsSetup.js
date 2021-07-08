@@ -4,7 +4,7 @@ const hdkey = require('ethereumjs-wallet/hdkey');
 
 module.exports.transferEth = async function (fromAccSeed, ethEndpoint) {
 
-   var web3 = new Web3(new Web3.providers.HttpProvider(ethEndpoint))
+   var web3 = new Web3(new Web3.providers.WebsocketProvider(ethEndpoint))
 
      let hdwallet = hdkey.fromMasterSeed(await bip39.mnemonicToSeed(fromAccSeed));
      let wallet_hdpath0 = "m/44'/60'/0'/0/0";
