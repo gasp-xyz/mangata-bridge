@@ -1,0 +1,10 @@
+{
+  "name": "deploy-eth-bridge-contracts",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "bip39": "^3.0.4",
+    "ethereumjs-wallet": "0.6.5",
+    "dotenv": "^8.2.0"
+  }
+}
