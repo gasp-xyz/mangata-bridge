@@ -2,8 +2,7 @@
   "name": "mangata-bridge",
   "version": "0.1.0",
   "repository": "https://github.com/mangata-finance/mangata-bridge.git",
-  "author": "Mangata Finance",
-  "license": "MIT",
+  "author": "Snowfork",
   "scripts": {
     "bump:major": "standard-version --release-as major",
     "bump:minor": "standard-version --release-as minor",
