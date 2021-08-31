@@ -14,7 +14,7 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/sirupsen/logrus"
 
-	"github.com/snowfork/polkadot-ethereum/relayer/chain"
+	"github.com/mangata-finance/mangata-bridge/relayer/chain"
 )
 
 type Writer struct {

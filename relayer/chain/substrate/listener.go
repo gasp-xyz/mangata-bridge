@@ -15,7 +15,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/centrifuge/go-substrate-rpc-client/scale"
 	types "github.com/centrifuge/go-substrate-rpc-client/types"
-	"github.com/snowfork/polkadot-ethereum/relayer/chain"
+	"github.com/mangata-finance/mangata-bridge/relayer/chain"
 )
 
 type Listener struct {

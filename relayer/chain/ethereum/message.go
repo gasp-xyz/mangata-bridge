@@ -10,7 +10,7 @@ import (
 	etypes "github.com/ethereum/go-ethereum/core/types"
 	"github.com/sirupsen/logrus"
 	"github.com/centrifuge/go-substrate-rpc-client/scale"
-	"github.com/snowfork/polkadot-ethereum/relayer/chain"
+	"github.com/mangata-finance/mangata-bridge/relayer/chain"
 )
 
 type Message struct {

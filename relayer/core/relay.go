@@ -12,9 +12,17 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/snowfork/polkadot-ethereum/relayer/chain"
-	"github.com/snowfork/polkadot-ethereum/relayer/chain/ethereum"
-	"github.com/snowfork/polkadot-ethereum/relayer/chain/substrate"
+	"github.com/mangata-finance/mangata-bridge/relayer/chain"
+	"github.com/mangata-finance/mangata-bridge/relayer/chain/ethereum"
+	"github.com/mangata-finance/mangata-bridge/relayer/chain/substrate"
+
+	// "github.com/snowfork/snowbridge/relayer/chain"
+	// "github.com/snowfork/snowbridge/relayer/chain/ethereum"
+	// "github.com/snowfork/snowbridge/relayer/chain/substrate"
+
+	// "chain"
+	// "ethereum"
+	// "substrate"
 	"github.com/spf13/viper"
 	"golang.org/x/sync/errgroup"
 

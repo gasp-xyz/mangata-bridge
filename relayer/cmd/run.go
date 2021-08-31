@@ -9,7 +9,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/snowfork/polkadot-ethereum/relayer/core"
+	"github.com/mangata-finance/mangata-bridge/relayer/core"
 )
 
 func runCmd() *cobra.Command {

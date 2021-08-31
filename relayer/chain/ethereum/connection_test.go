@@ -9,8 +9,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/snowfork/polkadot-ethereum/relayer/chain/ethereum"
-	"github.com/snowfork/polkadot-ethereum/relayer/crypto/secp256k1"
+	"github.com/mangata-finance/mangata-bridge/relayer/chain/ethereum"
+	"github.com/mangata-finance/mangata-bridge/relayer/crypto/secp256k1"
 )
 
 func TestConnect(t *testing.T) {
