@@ -76,21 +76,13 @@ func (wr *Writer) Write(_ context.Context, msg *chain.Message) error {
 		return err
 	}
 
-	key, err := types.CreateStorageKey(&wr.conn.metadata, "System", "Account", wr.conn.kp.PublicKey, nil)
+	var nonce uint64
+	err = wr.conn.api.Client.Call(&nonce, "system_accountNextIndex", "5Ggeh38xrCy49HYrh26QETuQmppaapygTLKQWds7upStaZYK")
 	if err != nil {
 		return err
 	}
 
-	var accountInfo types.AccountInfo
-	ok, err := wr.conn.api.RPC.State.GetStorageLatest(key, &accountInfo)
-	if err != nil {
-		return err
-	}
-	if !ok {
-		return fmt.Errorf("no account info found for %s", wr.conn.kp.URI)
-	}
-
-	nonce := uint32(accountInfo.Nonce)
+	wr.log.WithField("nonce", nonce).Debug("Nonce acquired by rpc.")
 
 	o := types.SignatureOptions{
 		BlockHash:          genesisHash,
