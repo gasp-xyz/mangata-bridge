@@ -6,7 +6,6 @@ package substrate
 import (
 	"context"
 	"encoding/hex"
-	"fmt"
 
 	"github.com/sirupsen/logrus"
 
