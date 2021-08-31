@@ -3,8 +3,6 @@ name: Docker Image CI
 on:
   push:
     branches: [ main ]
-#   pull_request:
-#     branches: [ master ]
 
 jobs:
 
@@ -34,4 +32,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: mangatasolutions/mangata-bridge:latest
+          tags: mangatasolutions/mangata-bridge:latest,mangatasolutions/mangata-bridge:${{ github.sha }}
