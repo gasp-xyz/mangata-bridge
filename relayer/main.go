@@ -16,7 +16,7 @@ limitations under the License.
 package main
 
 import (
-	"github.com/snowfork/polkadot-ethereum/relayer/cmd"
+	"github.com/mangata-finance/mangata-bridge/relayer/cmd"
 )
 
 func main() {

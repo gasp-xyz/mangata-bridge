@@ -39,4 +39,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
+          context: ./relayer
           tags: ${{ steps.meta.outputs.tags }}

@@ -6,14 +6,13 @@ package substrate
 import (
 	"context"
 	"encoding/hex"
-	"fmt"
 
 	"github.com/sirupsen/logrus"
 
 	"golang.org/x/sync/errgroup"
 
 	"github.com/centrifuge/go-substrate-rpc-client/types"
-	"github.com/snowfork/polkadot-ethereum/relayer/chain"
+	"github.com/mangata-finance/mangata-bridge/relayer/chain"
 )
 
 type Writer struct {

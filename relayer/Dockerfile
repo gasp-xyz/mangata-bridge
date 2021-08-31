@@ -19,6 +19,6 @@ USER 1001
 # RUN sed -i 's/.\/contracts\//\/tmp\/contracts\//g' /tmp/relay-config.toml
 # RUN cat /tmp/relay-config.toml
 
-ENV ARTEMIS_SUBSTRATE_KEY=//Relay
+# ENV ARTEMIS_SUBSTRATE_KEY=//Relay
 
 ENTRYPOINT ["/usr/local/bin/artemis-relay"]

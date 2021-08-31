@@ -1,4 +1,4 @@
-module github.com/snowfork/polkadot-ethereum/relayer
+module github.com/mangata-finance/mangata-bridge/relayer
 
 go 1.13
 

@@ -9,8 +9,8 @@ import (
 	"golang.org/x/sync/errgroup"
 
 	"github.com/sirupsen/logrus"
-	"github.com/snowfork/polkadot-ethereum/relayer/chain"
-	"github.com/snowfork/polkadot-ethereum/relayer/crypto/sr25519"
+	"github.com/mangata-finance/mangata-bridge/relayer/chain"
+	"github.com/mangata-finance/mangata-bridge/relayer/crypto/sr25519"
 )
 
 type Chain struct {
