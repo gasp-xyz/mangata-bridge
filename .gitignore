@@ -8,4 +8,6 @@ deploy-bridge/build
 deploy-bridge/node_modules
 deploy-bridge/deploy/hex2bytes/target
 deploy-eth-bridge-contracts/node_modules
+lock-mga-tokens-into-bridge/node_modules
+lock-mga-tokens-into-bridge/yarn.lock
 *.env
