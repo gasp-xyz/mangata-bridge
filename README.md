@@ -1,4 +1,19 @@
-# Snowfork Polkadot Ethereum Bridge modified for Mangata
+<p align="center">
+    <a href="https://https://mangata.finance/">
+    <img width="132" height="101" src="https://mangata.finance/images/logo-without-text.svg" class="attachment-full size-full" alt="Mangata brand" loading="lazy" /></a>
+</p>
+
+<h2 align="center">Mangata Bridge</h2>
+
+<p align="center">
+    Snowfork Polkadot Ethereum Bridge modified for Mangata
+</p>
+
+![Issues](https://img.shields.io/github/issues/mangata-finance/mangata-bridge)
+![Pull Request](https://img.shields.io/github/issues-pr/mangata-finance/mangata-bridge)
+![GitHub last commit](https://img.shields.io/github/last-commit/mangata-finance/mangata-bridge)
+![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fmangata-finance%2Fmangata-bridge%2Fbadge%3Fref%3Ddevelop&style=flat)
+![Language](https://img.shields.io/github/languages/top/mangata-finance/mangata-bridge)
 
 Components for a Polkadot Ethereum Bridge
 
