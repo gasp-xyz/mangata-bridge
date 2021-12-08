@@ -115,19 +115,24 @@ func (re *Relay) Start() {
 			}
 
 			var status statusResponse
+			var statusCode int
 
 			select {
 			case <-ctx.Done():
 				status = statusResponse{Status: "shutting_down"}
+				statusCode = 503
 				break
 			case <-cc:
 				status = statusResponse{Status: "fatal_error"}
+				statusCode = 500
 				break
 			default:
 				status = statusResponse{Status: "ok"}
+				statusCode = 200
 			}
 
 			body, _ := json.Marshal(status)
+			w.WriteHeader(statusCode)
 			w.Header().Set("Content-Type", "application/json")
 
 			if _, err := w.Write(body); err != nil {
