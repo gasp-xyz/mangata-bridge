@@ -5,12 +5,15 @@ package core
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
 	"fmt"
+	"net/http"
 	"os"
 	"os/signal"
 	"strings"
 	"syscall"
+	"time"
 
 	"github.com/mangata-finance/mangata-bridge/relayer/chain"
 	"github.com/mangata-finance/mangata-bridge/relayer/chain/ethereum"
@@ -85,6 +88,81 @@ func (re *Relay) Start() {
 			log.WithField("signal", sig.String()).Info("Received signal")
 			cancel()
 
+		}
+
+		return nil
+	})
+
+	// Run a simple HTTP server providing a healthcheck endpoint.
+	eg.Go(func() error {
+		cc := make(chan bool, 1)
+
+		log.WithFields(log.Fields{
+			"address": fmt.Sprintf("%s:%d", "", 8080),
+		}).Info("starting a healthcheck HTTP endpoint")
+
+		mux := http.NewServeMux()
+
+		//// Calling this endpoint will cause the bridge to kill itself. Use ONLY for testing. Keep commented out otherwise.
+		//mux.HandleFunc("/suicide", func(w http.ResponseWriter, req *http.Request) {
+		//	cc <- true
+		//	syscall.Kill(syscall.Getpid(), syscall.SIGINT)
+		//})
+
+		mux.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
+			type statusResponse struct {
+				Status string `json:"status"`
+			}
+
+			var status statusResponse
+
+			select {
+			case <-ctx.Done():
+				status = statusResponse{Status: "shutting_down"}
+				break
+			case <-cc:
+				status = statusResponse{Status: "fatal_error"}
+				break
+			default:
+				status = statusResponse{Status: "ok"}
+			}
+
+			body, _ := json.Marshal(status)
+			w.Header().Set("Content-Type", "application/json")
+
+			if _, err := w.Write(body); err != nil {
+				panic(err)
+			}
+		})
+
+		server := &http.Server{Addr: ":8080", Handler: mux}
+
+		go func() {
+			if err := server.ListenAndServe(); err != nil {
+				if errors.Is(err, http.ErrServerClosed) {
+					log.Info("shutting down healthcheck HTTP server")
+				} else {
+					panic(err)
+				}
+			}
+		}()
+
+		go func() {
+			if err := eg.Wait(); err != nil {
+				if !errors.Is(err, context.Canceled) {
+					cc <- true
+				}
+			}
+		}()
+
+		stop := make(chan os.Signal, 1)
+		signal.Notify(stop, syscall.SIGINT, syscall.SIGTERM)
+
+		<-stop
+		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		defer cancel()
+		if err := server.Shutdown(ctx); err != nil {
+			return err
 		}
 
 		return nil
